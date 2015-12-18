@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 5px 10px;
+    font-family: 'Whitney SSm A', 'Whitney SSm B', 'helvetica neue', helvetica, sans-serif;
+    color: #302c22;
+    font-size: 150%;
+    line-height: 1.6;
+    background: url(../images/f93a9060-255c-4b44-aebd-84b641b56039.jpg) center top no-repeat fixed #fff;
+}
+
+a {
+    color: #00B7FF
+}
+
+pre, code {
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    max-width: 100%;
+    overflow: auto;
+    padding: 0.2em 0.4em;
+    white-space: pre;
+    word-wrap: break-word;
+    text-align: left
+}
+
+pre {
+    background: #fff;
+    border: 1px solid #999;
+    border-radius: 3px
+}
+
+.contentBox {
+    margin: 70px auto 20px;
+}
+
+#msgBox {
+    width: 200px;
+    position: absolute;
+    top: 15px;
+    height: 40px;
+    line-height: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: #ffeeaa;
+    border-radius: 3px;
+    display: none;
+}
+
+.btnDel {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    float: right;
+    padding: 5px;
+    color: #00B7FF;
+    text-decoration: underline;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.logo {
+    background: url('../images/logobig.png') center center no-repeat transparent;
+    width: 250px;
+    height: 70px;
+    margin: 0 auto;
+    background-size: contain;
+}
+
+.logoWrap {
+    background: url(../images/f93a9060-255c-4b44-aebd-84b641b56039.jpg) center top no-repeat fixed #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+}
+
+.liBox {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px 1px #aaa;
+    display: block;
+    margin: 15px 0;
+    padding: 10px 20px;
+}
+
+.titleBox {
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.summaryBox {
+    color: #555;
+    font-size: 1.2em;
+    text-indent:2em;
+}
+.summaryBox2{
+    color: #555;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.memoBox {
+    margin-top: 20px;
+    color: #999;
+}
+
+.siteIco {
+    height: 1em;
+    margin: 0 5px;
+    width: 1em;
+}
+
+@media (max-width: 900px) {
+    body {
+        padding: 10px;
+        font-family: 'Whitney SSm A', 'Whitney SSm B', 'helvetica neue', helvetica, sans-serif;
+        background: url(../images/f93a9060-255c-4b44-aebd-84b641b56039.jpg) center top no-repeat fixed #fff;
+        color: #302c22;
+        font-size: 200%;
+        line-height: 1.6;
+        word-wrap: break-word;
+    }
+
+    .btnDel {
+        display: none;
+    }
+
+    img {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
+/*login*/
+#loginBox form, #loginCover {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    margin-top: -200px;
+    left: 50%;
+    margin-left: -200px;
+    border-radius: 5px;
+}
+#loginCover {
+    opacity: 0.7;
+    background: #fff;
+}
+#loginBox form input {
+    margin: 10px 20px;
+    width: 360px;
+    padding: 5px 10px;
+    outline: none;
+}
+#loginBox form input[type=text] {
+    box-shadow: none;
+}
+#loginBox form input[type=button] {
+    margin-top: 50px;
+    background: #a4cd66;
+    border: none;
+}
+#loginBox form p {
+    margin: 0;
+    padding: 0;
+}
+#loginBox form {
+    padding-top: 30px;
+}
