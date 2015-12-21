@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ARTICLE</title>
+      <meta charset="utf-8">
+    <style>
+    body {
+      overflow: hidden;
+      margin: 0px;
+      padding: 0px;
+      background: #f2f2f2;
+        width: 185px;
+        line-height: 2em;
+        color: #404040;
+        font-family: "微软雅黑";
+    }
+
+    div:first-child {
+      margin-top: 0px;
+    }
+    p{
+        margin: 0;
+    padding: 0;
+    }
+    a{
+        text-decoration: none;
+        color: #404040;
+    }
+    div:hover a,div:hover{
+        color: #fd6c0d;
+    }
+    div {
+      cursor: pointer;
+      text-align: left;
+      padding: 1px 3px;
+      font-size: 0.8em;
+      width: 160px;
+        height: 30px;
+        line-height: 30px;
+        border: none;
+      padding-left: 20px;
+        background: #f9f9f9;
+        position: relative;
+    }
+    div:hover {
+      background: #f2f2f2;
+    }
+  .inote_read_line{
+        height: 0px;
+        border-bottom: 1px solid #fff;
+        border-top: 1px solid #cbcbcb;
+    }
+  .inote_no_icon{
+        padding-left: 52px !important;
+  }
+  b{
+        display: inline-block;
+        height: 17px;
+        width: 22px;
+        background: url("/image/icons/icons.png") no-repeat;
+        margin-right: 9px;
+        position: relative;
+        top: 4px;
+  }
+  #inote_read_clear_b{
+      background-position: -16px -12px;
+  }
+        #inote_read_clear:hover #inote_read_clear_b{
+            background-position: -61px -12px;
+        }
+
+   #inote_read_later_b{
+       background-position: -16px -41px;
+   }
+    #inote_read_later:hover #inote_read_later_b{
+        background-position: -61px -41px;
+    }
+    #inote_read_novel_b{
+        background-position: -16px -77px;
+    }
+    #inote_read_novel:hover #inote_read_novel_b{
+        background-position: -61px -77px;
+    }
+        #inote_read_mymagazine_b{
+            background-position: -16px -111px;
+        }
+    #inote_read_mymagazine:hover #inote_read_mymagazine_b{
+        background-position: -61px -111px;
+    }
+        #inote_read_subscript_b{
+            background-position: -16px -142px;
+        }
+    #inote_read_subscript:hover #inote_read_subscript_b{
+        background-position: -61px -142px;
+    }
+    #inote_Recent_Favorites_b{
+        background-position:-15px -171px ;
+    }
+    #inote_Recent_Favorites:hover #inote_Recent_Favorites_b{
+        background-position: -60px -171px;
+    }
+        #inote_article_num{
+            position: absolute;
+            right: 20px;
+            top: 8px;
+            border-radius: 40%;
+            background: #fd6c0d;
+            color: #fff;
+            padding: 2px 4px;
+            cursor: pointer;
+            height: 12px;
+            line-height: 12px;
+            font-size: 12px;;
+        }
+    </style>
+    <script src="/js/jquery-1.11.0.min.js"></script>
+  </head>
+  <body>
+    <p style="height: 10px;background: #fd6c0d"></p>
+    <p class="inote_read_line"></p>
+    <div id="inote_read_clear"><b id="inote_read_clear_b"></b>纯净阅读</div>
+    <div id="inote_read_later"><b id="inote_read_later_b"></b>收藏，稍后读<label id="inote_article_num">0</label></div>
+    <p class="inote_read_line"></p>
+    <a target="_blank" href="http://www.baidu.com"><div id="inote_read_about" class="inote_no_icon">ARTICLE官网</div></a>
+    <script src="/js/popup.js"></script>
+  </body>
+</html>

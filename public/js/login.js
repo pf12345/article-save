@@ -34,11 +34,11 @@ var LoginBox = React.createClass({
         ajaxQuery.post('/user/login', {name: this.state.name, password: this.state.password}, function(msg) {
             console.log(msg);
         });
-
     },
     register: function() {
         var name = 'pengfeng';
         var password = '123456';
+
         ajaxQuery.post('/user/register', {name: name, password: password}, function(msg) {
             console.log(msg);
         });

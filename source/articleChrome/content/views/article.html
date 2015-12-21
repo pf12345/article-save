@@ -1,0 +1,282 @@
+<div resizable class="minheight singleArticle font-size{{selecteFontSizeIndex}}">
+    <div class="aboutArticle">
+        <div class="article_info">
+            <p class="article_info_img" style="background-image:url('http://img01.ireadhome.com/magazine/defaultcover_300x300.jpg')"
+               ng-style="magazine.coverURL!=''&&{'background-image':'url('+magazine.coverURL+')'}"></p>
+            <a href="#/magazine/{{magazine.ID}}?userid={{magazine.owner.ID}}"><span>{{magazine.name}}</span></a>
+        </div>
+        <p class="artcile-summary">{{magazine.summary}}</p>
+
+        <p ng-show="!articleType_read">
+            <img width="30"
+                 height="30"
+                 ng-src="{{magazine.owner.avatarURL}}"
+                 alt="头像"
+                 class="img-circle"/>
+            <span style="top: 7px;"><a ng-href="#/user/{{magazine.owner.ID}}">{{magazine.owner.nickName}}</a></span>
+        </p>
+        <div class="articleqrCode article_info" ng-show="!articleType_read">
+            <p>扫描二维码分享</p>
+            <img class="article_info_img" ng-src="{{article.qrCode}}" alt="文章二维码"/>
+        </div>
+    </div>
+
+    <div class="bottom-blank minheight articleContent" resizable>
+        <b class="back_icon"
+           ng-click="goBack()"
+           ng-show="!articleType_read"
+           title="返回"></b>
+
+        <div class="article_operate">
+            <div>
+                <b class="save_icon" ng-show="articleType_read" ng-click="save()" title="收藏，稍后读"></b>
+                <!----------------- 分享 -------------------------->
+                <div class="share-container" ng-show="!articleType_read">
+                    <b class="article_share_icon" title="分享" ng-click="showShareTips(0, 'popover', 'copy-button', 'codecontent')"></b>
+                    <div class="popover bottom fade in popover0 share-popover share">
+                        <div class="arrow"></div>
+                        <div class="popover-inner share">
+                            <div class="popover-content share">
+                                <div class="user-share minWidth share">
+                                    <p style="margin-top: auto;" class="minWidth"><b class="shareToXL"></b><a class="share" ng-click="shareTo('weibo',article)">分享到新浪微博</a></p>
+                                    <p><b class="shareToTX"></b><a class="share" ng-click="shareTo('tengxunweibo',article)">分享到腾讯微博</a></p>
+                                    <p><b class="shareToQzone"></b><a class="share" ng-click="shareTo('qzone',article)">分享到QQ空间</a></p>
+                                    <p><b class="shareToRR"></b><a class="share" ng-click="shareTo('renren',article)">分享到人人网</a></p>
+                                    <div class="share-link-p"><input type="button" class="_three_font share" id="copy-button0" value="复制链接"/></div>
+                                    <p class="share-ap">
+                                        <label>分享链接</label><label class="codecontent" id="codecontent0">
+                                            <a target="_blank" href="http://inoteweb.com/article/share/{{article.ID.replace('0-','')}}">http://inoteweb.com/article/share/{{article.ID.replace('0-','')}}</a>
+                                        </label>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!----------------- 分享 end -------------------------->
+                <b class="article_write_icon"
+                   ng-show="articleType_my"
+                   ng-click="edit()"
+                   title="编辑"></b>
+                <b class="article_delete_icon"
+                   ng-show="articleType_my"
+                   ng-click="Delete()"
+                   title="删除"></b>
+                <b class="article_praise_icon"
+                   ng-show="!articleType_read && !articleType_my"
+                   ng-click="commend()"
+                   title="赞"></b>
+                <!--<b class="style_icon"-->
+                   <!--popover-template="article-style.html"-->
+                   <!--popover-placement="bottom"-->
+                   <!--popover-trigger="click"-->
+                   <!--title="风格"></b>-->
+
+                <!----------------- 风格 -------------------------->
+                <div class="share-container">
+                    <b class="style_icon share" title="风格" ng-click="showShareTips(1, 'popover', 'copy-button', 'codecontent')"></b>
+                    <div class="popover bottom fade in popover1 share-popover share">
+                        <div class="arrow"></div>
+                        <div class="popover-inner share">
+                            <div class="popover-content share">
+                                <ul class="article-style-font share">
+                                    <span class="share">字体</span>
+                                    <li ng-repeat="font in allFonts" class="share">
+                                        <b class="share" id="font{{$index}}" ng-class="{i_select:$index==selectedFontIndex}"></b>
+                                        <label class="{{font.class}} share" ng-click="chooseFont($index)">{{font.name}}</label>
+                                    </li>
+                                </ul>
+                                <ul class="article-style-fontsize share">
+                                    <li class="share">
+                                        <span class="share">字号</span>
+                                        <b ng-click="chooseFontSizeMin()" class="i_fontminus share"></b>
+                                        <b ng-click="chooseFontSizeAdd()" class="i_fontplus share"></b>
+                                    </li>
+                                </ul>
+                                <ul class="article-style-theme share">
+                                    <li class="share">
+                                        <span class="share">主题</span>
+                                        <b class="share" ng-click="chooseTheme(0)" style="background-color: #f4f4f4"></b>
+                                        <b class="share" ng-click="chooseTheme(1)" style="background-color: #000"></b>
+                                        <b class="share" ng-click="chooseTheme(2)" style="background-color: #f8efd7"></b>
+                                        <b class="share" ng-click="chooseTheme(3)" style="background-color: #606060"></b>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!----------------- 风格 end -------------------------->
+            </div>
+        </div>
+        <div class="{{allFonts[selectedFontIndex]._class}} {{backgroundStyle[selectedBgStyleIndex]}} single-article-content">
+            <div class="title">
+                <h2>{{article.title}}</h2>
+            </div>
+            <div class="articleInfo">
+                <span class="time">{{article.addTime.substring(0,16).replace('T',' ')}}</span>
+                <a class="articleUrl"
+                   href="{{article.fromURL}}"
+                   target="_blank"
+                   display-hostname></a>
+            </div>
+            <div class="articleTitle"
+                 ng-if="article.comment">
+                {{article.comment}}
+            </div>
+            <div class="content" ng-bind-html="article.content" style="min-height: 400px;">
+            </div>
+        </div>
+        <div style="margin: 0 20px;">
+            <div class="comment"
+                 ng-hide=" article.ID == '0' ">
+                <div class="two-color-line"></div>
+                <h4>评论</h4>
+                <textarea ng-model='commentContent'
+                          placeholder="请评论"></textarea>
+
+                <p style="text-align: right">
+                    <input class="button_two_font"
+                           type="button"
+                           value="提交"
+                           ng-click="addComment(commentContent)"/>
+                </p>
+
+                <div class="user_lclist">
+                    <div ng-repeat="comment in comments">
+                        <a class="img_a"
+                           href="">
+                            <img width="86"
+                                 height="86"
+                                 ng-src="{{comment.user.avatarURL}}"
+                                 alt="{{comment.user.nickName}}"/>
+                        </a>
+
+                        <p><a ng-href="">{{comment.user.nickName}}</a>
+                        </p>
+
+                        <p class="commentContent">
+                            <span>{{comment.content}}</span>
+                        </p>
+
+                        <p class="">
+                            <span>{{comment.addTime.substring(0,16).replace('T',' ')}}</span>
+                        </p>
+
+                        <p class="line"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mc" style="display: none"></div>
+    <iframe src="http://www.ireadhome.com/user/applogin" class="login-iframe" style="" frameborder="0"></iframe>
+</div>
+
+<div class="contentNull"
+     ng-show="showLowQuaility">
+    <div class="modal-logo">
+        <h2>提示</h2>
+    </div>
+    <div style="margin: 40px;">
+        <h4 style="margin: 15px 0px;">当前网页内容可能并不适合纯净阅读。</h4>
+        <h4 style="margin-bottom: 40px;">你可以进行以下操作：</h4>
+
+        <p style="text-align: center">
+            <button style="margin-left: -5px;" ng-click="comeBackSource()" class="_four_font" style="background-color: #fff">返回原文</button>
+            <button style="margin-left: -5px;" ng-click="saveUrl()" class="_four_font" style="background-color: #fff">保存书签</button>
+            <button style="margin-left: -5px;" ng-click="showLowQuaility = false" class="_four_font" style="background-color: #fff">继续阅读</button>
+        </p>
+    </div>
+</div>
+<div ng-controller="backToTop"
+     id="back_top"
+     class="back_top c_back_top"
+     ng-switch="articleType">
+    <!--<b class="artcileReadPlanIocn" title="添加阅读计划" popover-template="add-read-plan.html" popover-placement="left" popover-trigger="click" ng-show="articleType_my==false&&readPlan == 'addPlan'">{{selfArticle}}</b>-->
+    <!----------------- 添加阅读计划 ---------------------->
+    <!--<b title="计划" class="addReadPlanIcon" popover-template="set-plan.html" popover-placement="bottom" popover-trigger="click"></b>-->
+    <div ng-show="article.userID != curUserID">
+        <b title="添加至阅读计划" class="artcileReadPlanIocn readplan" ng-click="showShareTips(0, 'AddReadPlan')"></b>
+        <div ng-show="articleType_my==false&&readPlan == 'addPlan'">
+            <div class="popover left fade in AddReadPlan0 readplan-popover share singleArticle-readplan-popover">
+                <div class="arrow"></div>
+                <div class="popover-inner share">
+                    <div class="popover-content share">
+                        <div class="add-read-plan">
+                            <p class="share"><label>添加到我的阅读计划</label></p>
+                            <p class="share"><input class="share" type="text" ng-model="postil" placeholder="一句话批注"/></p>
+                            <p class="share">
+                                <input type="button" ng-click="addReadPlan(article,postil,1)" class="_three_font share" value="今天"/>
+                                <input type="button" ng-click="addReadPlan(article,postil,2)" class="_three_font share" value="明天"/>
+                                <input type="button" ng-click="addReadPlan(article,postil,3)" class="_three_font share" value="以后"/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------------- 添加阅读计划 end ---------------------->
+
+    <b class="c_back_top"
+       id="c_back_top"
+       ng-click="backTotop()"
+       title="返回顶部"></b>
+</div>
+
+
+
+<script type="text/ng-template"
+        id="article-delete.html">
+    <p style="margin:15px">确认删除？</p>
+    <button class="btn btn-primary"
+            ng-click="Delete($index)">确认
+    </button>
+    <button class="btn btn-default"
+            ng-click="removeOtherPopover()">取消
+    </button>
+</script>
+<script type="text/ng-template"
+        id="article-move.html">
+    <p>移动到：</p>
+    <ul class="move-to">
+        <li ng-repeat="maga in myMagazines"
+            ng-click="move($parent.$index,$index)">
+            <span>{{maga.name}}</span>< /li>
+    </ul>
+</script>
+<!--<script type="text/ng-template"-->
+        <!--id="article-style.html">-->
+    <!--<ul class="article-style-font">-->
+        <!--<span>字体</span>-->
+        <!--<li ng-repeat="font in allFonts">-->
+            <!--<b id="font{{$index}}"-->
+               <!--ng-class="{i_select:$index==selectedFontIndex}"></b>-->
+            <!--<label class="{{font.class}}"-->
+                   <!--ng-click="chooseFont($index)">{{font.name}}</label>-->
+        <!--</li>-->
+    <!--</ul>-->
+    <!--<ul class="article-style-fontsize">-->
+        <!--<li>-->
+            <!--<span>字号</span>-->
+            <!--<b ng-click="chooseFontSizeMin()"-->
+               <!--class="i_fontminus"></b>-->
+            <!--<b ng-click="chooseFontSizeAdd()"-->
+               <!--class="i_fontplus"></b>-->
+        <!--</li>-->
+    <!--</ul>-->
+    <!--<ul class="article-style-theme">-->
+        <!--<li>-->
+            <!--<span>主题</span>-->
+            <!--<b ng-click="chooseTheme(0)"-->
+               <!--style="background-color: #f4f4f4"></b>-->
+            <!--<b ng-click="chooseTheme(1)"-->
+               <!--style="background-color: #000"></b>-->
+            <!--<b ng-click="chooseTheme(2)"-->
+               <!--style="background-color: #f8efd7"></b>-->
+            <!--<b ng-click="chooseTheme(3)"-->
+               <!--style="background-color: #606060"></b>-->
+        <!--</li>-->
+    <!--</ul>-->
+<!--</script>-->

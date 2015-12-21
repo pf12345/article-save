@@ -78,6 +78,7 @@
           });
         } else {
           setSession(req, result);
+          console.log(req.session);
           return res.send({
             code: 0,
             message: 'ok',
@@ -88,11 +89,9 @@
     }
   };
 
-
   /*获取用户信息
       退出登录
    */
-
   exports.signOut = function(req, res) {
     res.session.clear();
     return res.redirect("/explore");
@@ -122,15 +121,40 @@
     });
   };
 
+  /**
+   * 判断是否登录
+   * @param req
+   * @param res
+   */
+  exports.isLogin = function(req, res) {
+    console.log(req.session)
+    if(req.session.userId) {
+      res.send({
+        code: 0,
+        message: 'true',
+        user: {
+          userId: res.session.userId,
+          nickname: res.session.nickname
+        }
+      });
+    }else {
+      res.send({
+        code: 1,
+        message: 'false'
+      });
+    }
+  };
+
   /*
    创建session
    */
 
   setSession = function(req, result) {
+    console.log(result)
     req.session.userId = result._id.toString();
     req.session.userName = result.name;
     req.session.userEmail = result.email;
-    return req.session.userAvatar = result.avatar;
+    req.session.userAvatar = result.avatar;
   };
   /*
   	用户主页

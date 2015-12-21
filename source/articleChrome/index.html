@@ -1,0 +1,116 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" ng-app='inoteApp' ng-csp="" scroll id="ng-app" ng-class="{min:boolChangeClass}" ng-controller="mainCtrl">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="我的收藏，我的杂志" />
+    <meta name="Keywords" content="收藏,纯净阅读,杂志,订阅,inote,微收藏" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no,  minimum-scale=1, maximum-scale=1" />
+    <title>iNote微收藏</title>
+    <link rel="dns-prefetch" href="http://bdimg.share.baidu.com" />
+    <link rel="stylesheet" href="css/all.css" media="screen"/>
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/dfopajdkckonolmdafpcenbhjfpcbkhh">
+    <!--65f7e42a-4c9f-406c-9208-1a13f0ae351d-->
+    <script src='js/jquery-1.11.0.min.js'></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-other.js"></script>
+    <script src="js/xdomain.min.js" slave="http://service.ireadhome.com/proxy.html"></script>
+    <script src="js/util.min.js?101"></script>
+    <script src="js/app.js?101"></script>
+    <!--[if  IE]>
+    <script src="js/ie.js"></script>
+    <![endif]-->
+</head>
+
+<!--[if  IE 8]>
+<body class="ie8" id="web">
+<![endif]-->
+
+<body id="app">
+
+<div id="inote-message">
+</div>
+<!--[if lte IE 7]>
+    <div class="lowIe">
+    </div>
+    <div class="lowIeCont">
+        <h1>浏览器版本过低！</h1>
+        <p>
+            <span>我们推荐使用 <a href="https://www.google.com/intl/zh-CN/chrome/browser/">Google chrome</a>访问，以获得最佳用户体验</span>
+        </p>
+    </div>
+<![endif]-->
+
+<div class="small-header-list-div">
+    <div class="small-header-list headerMinheight" resizable>
+        <div class="header-userInfo" ng-show="login">
+            <img width="80" height="80" ng-src="{{userHeader.avatarURL}}" alt="头像" class="img-circle"/>
+            <p class="nickname">{{userHeader.nickName}}</p>
+            <p class="aboutme">{{userHeader.aboutMe}}</p>
+            <div ng-show="login" class="user_operate">
+                <a href="#/editInfo"><b title="设置" id="user-set" class="icon_3 user-set"></b></a>
+                <a href="#/messageInfo"><b title="私信" id="private-letter" class="icon_3 private-letter" ng-class="{haveLetter:haveLetter==true}" ></b></a>
+            </div>
+            <b class="clear-float"></b>
+        </div>
+    </div>
+</div>
+
+
+<div class="main-div mt8" resizable>
+    <!------ ----------------- --------- header --------------- ---------------- ------->
+    <div id="header">
+        <div>
+            <ul class="leftIcon">
+                <li>
+                    <a href="#/"><img class="companylogo" height="24" width="91" src="image/icons/iNote_collect.png" alt="Logo"/></a>
+                </li>
+            </ul>
+            <ul class="rightIcon">
+                <li class="nav-li" id="closeIframe">
+                    <b title="关闭" class="closeIcon navIcon" ng-click="closeIframe()"></b>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!------ ----------------- --------- header end --------------- ---------------- ------->
+
+    <!----------------------------- 小屏幕header ------------------------------- ----------->
+    <div class="small-header small-header-shadow mt8">
+        <p>
+            <b id="small-header-icon" class="list-icon small-list-icon"></b>
+            <span><a href="#/"><img width="91" height="24" class="companylogo" src="image/icons/iNote_collect.png" alt="Logo"/></a></span>
+        </p>
+    </div>
+    <!----------------------------- 小屏幕header end ------------------------------- ----------->
+
+
+    <div class="main shadow">
+        <!----- ------------------- ------- content -- --------------------- ----------------->
+        <div class="minheight index" resizable>
+            <div class="index-exploreLoading" id="index-exploreLoading">
+                <img height="11" width="88" src="image/icons/loading.GIF" alt=""/>
+            </div>
+            <div ng-view class="main-content" ></div>
+        </div>
+
+        <!----- ------------------- ------- content end -- --------------------- ----------------->
+        <!------------- ---------- --------- footer -------------- ------------- -------------->
+        <!--<div id="footer">-->
+            <!--<ul>-->
+                <!--<li><a href="#/download"></a><label class="mr30">|</label></li>-->
+                <!--<li><a href="#/culture"></a><label class="mr30 last-label">|</label></li>-->
+                <!--<li><a href="#/joinUs"></a><label class="mr30">|</label></li>-->
+                <!--<li><a href="#/contactus"></a></li>-->
+                <!--<p class="clear-float"></p>-->
+            <!--</ul>-->
+            <!--<div>-->
+                <!--<span>iNote</span><label class="mr10">|</label><a href="#/"></a> <span class="mr10"> </span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!------------- ---------- --------- footer end -------------- ------------- -------------->
+    </div>
+</div>
+</body>
+
+</html>

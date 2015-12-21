@@ -18,5 +18,5 @@ gulp.task('mainJs', function() {
 gulp.task('default', ['mainJs']);
 
 gulp.task('watch', function () {
-	//gulp.watch('./public/js/*.js', ['mainJs']);
+	gulp.watch('./public/js/*.js', ['mainJs']);
 });

@@ -1,0 +1,1246 @@
+
+
+
+/*---------------------------------------------------------------------------------------*/
+/*  各种不同屏幕大小media样式
+/*---------------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .big-img > img {
+        width: 100%;
+        height: auto;
+    }
+    #header > div,
+    .main {
+        width: 100%;
+    }
+
+    .bottom-blank {
+        padding-bottom: 60px;
+    }
+    .mazagineInfo {
+        margin: auto 28px;
+    }
+
+    .mazagineInfo .single_magazine {
+        margin: 15px 12px;
+    }
+
+    /*----------------- 发现 page ---------------*/
+    .exploreContent ul li > div {
+        width: 240px;
+    }
+    .exploreContent ul li {
+        margin: 36px 14px auto;
+    }
+
+    .exploreContent {
+        width: 810px;
+    }
+
+    .explore-readplan-popover {
+        right: -20px;
+    }
+
+    .explore-readplan-popover .arrow {
+        left: 88% !important;
+    }
+    /*---------------- 阅读计划 ---------------*/
+    .addTime {
+        background: #f2f2f2;
+        padding-left: 11px;
+        bottom: 15px;
+    }
+
+     .article_list .anyContent {
+        max-height: 40px;
+    }
+
+     .article_list .articleItem {
+        margin: auto 30px;
+    }
+
+    .article_card .articleItem {
+        width: 45%;
+    }
+
+    .app_article_recommad {
+        width: auto;
+    }
+
+    .app_article_footer {
+        width: 92%;
+    }
+
+   .article_card .center-cropped {
+        width: 100%;
+    }
+
+    .main .list_operate {
+       display: block !important;
+   }
+     /*----------------- 单篇文章 --------------*/
+
+    .aboutArticle .article_info .article_info_img {
+        width: 122px;
+        height: 122px;
+    }
+    .articleContent {
+        margin-left: 170px;
+    }
+
+    .singleArticle .back_icon {
+        left: 170px;
+    }
+
+    .singleArticle .popover1 {
+        right: -20px;
+    }
+
+    .singleArticle .popover1 .arrow {
+        left: 87%;
+    }
+
+    /*------------------ user page -----------------*/
+    .personalHomePage .relevantInfo {
+        width: 170px;
+    }
+
+    .publicMagazine h4 {
+        width: 134px;
+    }
+
+    .publicMagazine .article_info {
+        width: 117px;
+    }
+
+    .publicMagazine .article_info .article_info_img {
+        width: 105px;
+        height: 105px;
+    }
+
+    .readPlan .share-popover,
+    .personalHomePage .share-popover,
+    .personalHomePage .move-popover {
+        right: -20px;
+    }
+
+    .readPlan .share-popover .arrow,
+    .personalHomePage .move-popover .arrow {
+        left: 65% !important;
+    }
+
+    .personalHomePage .share-popover .arrow {
+        left: 86%;
+    }
+
+    .readPlan .readplan-popover {
+        right: -20px !important;
+    }
+
+    .readPlan .readplan-popover .arrow {
+        left: 89%;
+    }
+    /*----------------- 编辑个人信息 ------------------*/
+    .SystemAvatar {
+        width: 540px;
+        height: 460px;
+        margin-top: -230px;
+        margin-left: -270px;
+    }
+
+    #SystemAvatar-content img {
+        height: 98px;
+        width: 98px;
+    }
+    .SystemAvatar-content input[type=button] {
+        right: 16px;
+    }
+
+    /*-------------- login ------------------*/
+    #login-iframe {
+        width:100%
+    }
+
+    /*--------------- 创建杂志 --------------*/
+    #createNewMazagine {
+        position: absolute;
+        top: 70px;
+        margin-top: 0;
+    }
+
+    /*--------------- modal-dialog -----------*/
+    .modal-dialog {
+        position: absolute;
+        top: 20px;
+        margin-top: 0 !important;
+        font-family: "微软雅黑";
+    }
+
+    /*---------------------- 分享样式 ----------------*/
+    .share-ap {
+        display: block;
+    }
+    .share-link-p {
+        display: none;
+    }
+    .share label {
+        font-size: 12px;
+    }
+
+    /*------ 返回顶部 ------*/
+   .c_back_top {
+       display: none;
+   }
+
+   /*----- messageInfo ----*/
+    .msg-response {
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .big-img > img {
+        width: 100%;
+        height: auto;
+    }
+    .main-div {
+        overflow: hidden;
+        margin-left: 0px;
+        height: auto;
+        /*position: absolute;*/
+        top: 0;
+        left: 0;
+    }
+
+    .main {
+        width: 100%;
+    }
+    .list-icon {
+        left: 15px;
+    }
+    #header {
+        display: none;
+    }
+
+    .small-header, .main-div {
+       width: 100%;
+    }
+
+    .bottom-blank {
+        padding-bottom: 60px;
+    }
+
+    .small-header {
+        display: block;
+        text-align: center;
+    }
+
+    .small-header > p >span {
+        margin-left: 40px;
+    }
+
+    .my_magazine_title {
+        margin: 0 20px;
+    }
+
+    /*----------------------help page------------------------------*/
+    .help .question dt {
+        margin: 15px 25px 5px;
+    }
+
+    .help .question dl {
+        margin: 0 25px;
+        position: relative;
+        left: 15px;
+    }
+
+    .submit-help-title {
+        margin:15px 25px;
+    }
+
+    .help .form-group {
+        margin: 0 20px;
+    }
+
+    /*-------------- 订阅 --------------*/
+    .mazagineInfo {
+        max-width: 532px;
+        margin: auto;
+        width: 100%;
+    }
+
+    .mazagineInfo .single_magazine {
+        margin: 15px 19px;
+    }
+
+    /*------------ iNotePc、iNoteAndriod、browser、ireadAndriod --------------*/
+
+    .ireadAndroid2 .c2 {
+        max-width: 550px;
+        width: 100%;
+    }
+    .l_text {
+        margin-right: auto;
+    }
+    .r_text {
+        margin-left: 265px;
+    }
+    .imgLeft20 {
+        margin: auto;
+    }
+    .browser .ireadAndroid1 .c1,
+    .iNotepc .ireadAndroid1 .c1 {
+        height: auto;
+        text-align: center;
+    }
+
+    .browser .c1 .discrible1,
+    .iNotepc .c1 .discrible1 {
+        text-align: left;
+    }
+
+    .browser .c1,
+    .iNotepc .c1 {
+        width: 404px;
+        margin: auto;
+        padding: 60px 0;
+    }
+
+    .iNotepc .ireadAndroid1 .c1 img {
+        float: none;
+    }
+    .browser .ireadAndroid1 .c1 > img {
+        float: none;
+        margin-top: auto;
+    }
+
+    .browser .c2 {
+        height: auto !important;
+        width: 90% !important;
+    }
+    .iNotepc .c1 ul,.browser .c1
+    .iNotepc .c1 .discrible1 ,
+    .browser  .c1 .discrible1{
+        margin: auto;
+    }
+
+    .browser .c1 .discrible1,
+    .iNotepc .c1 .discrible1 {
+        margin-top: 40px;
+        height: 140px;
+        margin-left: auto;
+    }
+
+    .browser .c1 .discrible1 .u1,
+    .iNotepc .c1 .discrible1 .u1 {
+        float: left;
+    }
+
+    .browser .c1 .discrible1 .u2,
+    .iNotepc .c1 .discrible1 .u2 {
+        position: relative;
+        bottom: 0;
+        float: right;
+    }
+
+    .iNotepc .c2 {
+        width: 100%;
+    }
+
+    .ireadAndroid2 .c2 {
+        height: 693px;
+    }
+    .iNotepc  .ireadAndroid2 .c2 img {
+        float: none !important;
+        margin-left: 110px;
+    }
+
+    .lightPen .c2 ul,
+    .heartRead .c2 ul,
+    .shareSubscribe .c2 ul,
+    .laterRead .c2 ul,
+    .pageCollect ul {
+        margin: 40px 110px;
+    }
+
+    /*------------------- inote page ----------------------*/
+
+    .index-feature-item:nth-child(2n+1) > div{
+        margin-left: 222px;
+    }
+
+    .index-feature-item:nth-child(2n) > div{
+        margin-right: 222px;
+    }
+
+    /*------------- 发现page ----------*/
+
+    #three {
+        display: none;
+    }
+
+    .exploreContent ul li > div {
+        width: 266px;
+    }
+
+    .exploreContent ul li {
+        margin: 36px 20px auto;
+    }
+
+    .exploreContent {
+        width: 616px;
+    }
+
+    .explore-readplan-popover {
+        right: -20px;
+    }
+
+    .explore-readplan-popover .arrow {
+        left: 88% !important;
+    }
+
+    /*------------- 阅读计划 ------------*/
+
+    .readPlan .article_card {
+        padding:0 20px 0 15px ;
+    }
+
+    .article_card .articleItem {
+        margin: 40px 8px auto;
+    }
+
+    .article_card {
+        margin: auto auto auto 42px;
+    }
+
+
+    .addTime {
+        background: #f2f2f2;
+        padding-left: 11px;
+        bottom: 15px;
+    }
+
+    .article_list .anyContent {
+        max-height: 40px;
+        display: none;
+    }
+
+    .article_list .articleItem {
+        margin: auto 30px;
+    }
+
+    .article_list h5 {
+        max-height: 21px;
+    }
+
+    .list_operate {
+        bottom: -5px;
+    }
+
+    .articleItem h5 > a {
+        max-width: 80%;
+        display: inherit;
+        font-size: 15px;
+        max-height: 40px;
+        overflow: hidden;
+    }
+
+    .article_card .articleItem {
+        width: 45%;
+    }
+
+    .app_article_recommad {
+        width: auto;
+    }
+
+    .app_article_footer {
+        width: 92%;
+    }
+
+   .article_card .center-cropped {
+        width: 100%;
+    }
+
+    .main .list_operate {
+        display: block !important;
+    }
+    /*----------------- 单篇文章 --------------*/
+
+    .aboutArticle .article_info .article_info_img {
+        width: 62px;
+        height: 62px;
+    }
+    .articleContent {
+        margin-left: 110px;
+    }
+
+    .singleArticle .back_icon {
+        left: 110px;
+    }
+
+    .singleArticle .popover1 {
+        right: -20px;
+    }
+
+    .singleArticle .popover1 .arrow {
+        left: 87%;
+    }
+    /*---------------- 编辑杂志 -------------*/
+    .editeInfo-relInfo input[type=text] {
+        width:290px;
+
+    }
+
+    /*---------------- user page ------------*/
+    .personalHomePage .relevantInfo {
+        width: 120px;
+
+    }
+    .publicMagazine h4 {
+        width: 104px;
+    }
+    .personalHomePage .relevantInfo {
+        padding: 50px 8px 0;
+    }
+
+    .magazineShow > div {
+        margin: 0 20px;
+    }
+
+    .publicMagazine .article_info .article_info_img {
+        width: 78px;
+        height: 78px;
+    }
+    .publicMagazine .article_info {
+        width: 90px;
+    }
+
+    .readPlan .share-popover,
+     .share-popover,
+    .move-popover {
+        right: -20px !important;
+    }
+
+    .readPlan .share-popover .arrow,
+    .move-popover .arrow {
+        left: 65% !important;
+    }
+
+     .share-popover .arrow {
+        left: 86% !important;
+    }
+    .readPlan .readplan-popover,
+     .readplan-popover {
+        right: -20px !important;
+    }
+    .readplan-popover .arrow {
+        left: 85% !important;
+    }
+    .readPlan .readplan-popover .arrow {
+        left: 89% !important;
+    }
+
+    .magezine_main .move-popover .arrow {
+        left: 83% !important;
+    }
+    /*----------------- 编辑个人信息 ------------------*/
+    .SystemAvatar {
+        width: 440px;
+        height: 400px;
+        margin-top: -200px;
+        margin-left: -220px;
+    }
+
+    #SystemAvatar-content img {
+        height: 78px;
+        width: 78px;
+    }
+
+    .SystemAvatar-content input[type=button] {
+        right: 16px;
+    }
+
+    /*----------------- login --------------*/
+    #login-iframe {
+        width:100%;
+    }
+
+    /*--------------- 创建杂志 --------------*/
+    #createNewMazagine {
+        position: absolute;
+        top: 70px;
+        margin-top: 0;
+    }
+
+    /*--------------- modal-dialog -----------*/
+    .modal-dialog {
+        position: absolute;
+        top: 20px;
+        margin-top: 0 !important;
+    }
+
+    /*------------- messageInfo -------------*/
+
+
+    .msg-response {
+        width: 550px;
+        margin-left: -275px;
+    }
+
+    .resopnse-area,
+    #resopnseTextArea {
+        width: 400px;
+    }
+
+    .messageInfo .msgInfo-operate {
+        display: none;
+    }
+
+    .messageInfo .msgInfo-time {
+        display: none;
+    }
+
+    .messageInfo .msgInfo-sender {
+        display: none;
+    }
+
+    .msg-response-content {
+        padding-right: 12px;
+    }
+
+
+    .msg-response {
+        position: absolute;
+        top: 80px;
+        margin-top: auto;
+    }
+
+
+
+    /*------------- 分享样式 ----------*/
+    .share-ap {
+        display: block;
+    }
+    .share-link-p {
+        display: none;
+    }
+    .share label {
+        font-size: 12px;
+    }
+
+    /*------ 返回顶部 ------*/
+    .c_back_top {
+        display: none;
+    }
+
+    .articleqrCode>p {
+        max-width: 56px;
+    }
+
+}
+
+@media only screen and (max-width: 620px) {
+
+
+    .list-icon {
+        right: 50px;
+    }
+
+
+    .mazagineInfo .single_magazine {
+        margin: 15px 21px;
+    }
+
+    /*------------ iNotePc --------------*/
+    .lightPen .c2 ul,
+    .heartRead .c2 ul,
+    .shareSubscribe .c2 ul,
+    .laterRead .c2 ul,
+    .pageCollect ul {
+        margin: 40px 60px;
+    }
+
+    .c1 .discrible1 {
+        margin-left: 230px;
+    }
+    .synRead ul,
+    .r_text,
+    .l_text {
+        margin: auto 40px;
+    }
+    .ireadAndroid2 .c2 img {
+        margin:20px 9px;
+        float: none;
+    }
+    .ireadAndroid2 .c2 {
+        height: auto;
+    }
+    .iNotepc .ireadAndroid2 .c2 img {
+        margin-left: 40px;
+    }
+
+    /*------------- 发现 page --------------*/
+    .exploreContent ul {
+        float: none;
+        margin: auto;
+    }
+    .exploreContent {
+        width: 100%;
+    }
+
+    .exploreContent ul li > div {
+        width: auto;
+    }
+
+    /*---------------- 编辑杂志 -------------*/
+    .editeInfo-relInfo input[type=text] {
+        width: auto;
+
+    }
+
+    /*----------------- 修改密码 ------------*/
+
+    .editPassword input[type=text], .editPassword input[type=password] {
+        width: 228px;
+    }
+
+
+
+    /*--------------- 创建杂志 --------------*/
+    #createNewMazagine {
+        position: absolute;
+        top: 70px;
+        margin-top: 0;
+    }
+
+    /*--------------- modal-dialog -----------*/
+    .modal-dialog {
+        width: 400px;
+        position: absolute;
+        top: 20px;
+        margin-top: 0 !important;
+        margin-left: -200px !important;
+    }
+
+    /*--------------- messageInofo --------------*/
+
+    .msg-response img {
+        display: none;
+    }
+
+    .msg-response-content>div>p {
+        margin-left: 16px;
+    }
+
+    .msg-response {
+        width: 434px;
+        margin-left: -217px;
+    }
+
+    .resopnse-area {
+        margin-left: 20px;
+    }
+
+    /*----------- 阅读计划 -----------*/
+    .app_article_footer{
+        width: 100%;
+
+    }
+    .list_operate {
+        right: 12px;
+    }
+    .app_article_recommad {
+        width: 96%;
+        padding:0 6px;
+    }
+    .article_card .articleItem {
+        width: 85%;
+    }
+    .article_card .articleItem {
+        height: auto;
+    }
+
+
+}
+
+
+@media only screen and (min-width: 550px) and (max-width: 767px) {
+
+
+    #software_center .software_center_content ul li > b {
+        margin-left: 50px;
+    }
+    #software_center .software_recommand .introduce {
+        margin-right: 60px;
+    }
+
+    /*--------------- modal-dialog -----------*/
+    .modal-dialog {
+        width: 400px;
+        position: absolute;
+        top: 20px;
+        margin-top: 0 !important;
+        margin-left: -200px !important;
+    }
+
+    .modal-body input,
+    .modal-body .redactor_box{
+        width: 300px;
+    }
+
+    /*--------------- messageInfo --------------*/
+
+    .messageInfo .msgInfo-operate {
+        display: none;
+    }
+
+    .messageInfo .msgInfo-time {
+        display: none;
+    }
+
+    .messageInfo .msgInfo-sender {
+        display: none;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 549px) {
+
+    .list-icon {
+        right: 50px;
+    }
+    /*---------- footer ----------------*/
+    #footer ul, #footer > div {
+        width: 194px;
+        margin: auto;
+        margin-bottom: 12px;
+    }
+
+    #footer ul li {
+        margin-top: 12px;
+    }
+    .last-label {
+        margin: 0 0 0 30px;
+    }
+
+    /*----------- 软件中心 --------------*/
+    #software_center .software_recommand .introduce{
+        margin-right: 12px;
+    }
+    #software_center .software_recommand a,
+    #software_center .software_recommand label {
+        float: none;
+    }
+
+    .software_recommand > p {
+        display: block;
+    }
+    #software_center .software_center_content ul li > b {
+        margin-left: 50px;
+    }
+
+    /*------------ help page ------------*/
+    .help label {
+        width: 100%;
+        text-align: left;
+    }
+
+    .help .col-sm-8 input, .help .col-sm-8 textarea {
+        margin: 12px 30px 0;
+    }
+
+    .col-sm-offset-2 {
+        margin-left: 30px;
+    }
+
+
+
+    /*------------ iNotePc --------------*/
+
+    .iNotepc  .ireadAndroid1 .c1 > img {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .browser .c1 .discrible1,
+    .iNotepc  .c1 .discrible1 {
+        width: 85%;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+
+    .iNotepc  .ireadAndroid2 .c2 > img {
+        width: 70%;
+    }
+
+    .browser .c1,
+    .iNotepc .c1 {
+        width: 100%;
+    }
+
+    .c1 .discrible1 {
+        margin-left: 200px;
+    }
+
+    /*------------ inote page ---------------*/
+
+    .index-feature-item > img {
+        float: none;
+    }
+    .index-feature-item:nth-child(2n) > div,
+    .index-feature-item:nth-child(2n+1) > div {
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    #three {
+        display: block;
+    }
+
+
+    /*------------- 单篇文章 page --------------*/
+
+    .articleContent {
+        margin-left: 0;
+        border: none;
+    }
+
+    .aboutArticle {
+        top: 10px;
+        left: 10px;
+        display: none;
+    }
+
+    .aboutArticle .article_info .article_info_img {
+        display: none;
+    }
+
+    .artcile-summary {
+        display: none;
+    }
+
+    .singleArticle .back_icon {
+        left: 0;
+    }
+
+    /*--------------- 编辑杂志 -------------*/
+
+    .editInfo-Avatar {
+        margin: 40px 50px;
+    }
+
+    /*--------------- user page ------------*/
+
+    .personalHomePage .relevantInfo {
+        z-index: 99;
+        width: 100%;
+        max-height: 380px;
+        min-height: 240px;
+        position: relative;
+        background: transparent;
+        padding-top: 0;
+    }
+
+    .personalInfo {
+        float: left;
+        width: 50%;
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    .publicMagazine {
+        width: 105px;
+        float: right;
+        margin-right: 20px;
+    }
+
+    .personalInfo p {
+        text-align: left;
+    }
+
+    .personalInfo .aboutme {
+        padding: 0;
+    }
+
+    .publicMagazineList {
+        max-height: 261px !important;
+    }
+
+    /*----------------- 编辑个人信息 ------------------*/
+    .SystemAvatar {
+        width: 340px;
+        height: 340px;
+        margin-top: -170px;
+        margin-left: -170px;
+    }
+
+    #SystemAvatar-content img {
+        height: 58px;
+        width: 58px;
+    }
+
+
+    /*--------------- 创建杂志 --------------*/
+    #createNewMazagine {
+        width: 400px;
+        margin-left: -200px;
+    }
+
+    #createNewMazagine input[type=text],
+    #createNewMazagine input[type=password] {
+        width: 280px;
+    }
+
+    .createNewMazagine_content > p, .createNewMazagine_cover {
+        width: 318px;
+    }
+
+    .createNewMazagine_cover>div {
+        width: 280px;
+    }
+
+    #htmlFile {
+        left: 123px;
+    }
+
+    /*--------------- modal-dialog -----------*/
+    .modal-dialog {
+        width: 350px;
+        position: absolute;
+        top: 20px;
+        margin-top: 0 !important;
+        margin-left: -175px !important;
+    }
+
+    .modal-body input,
+    .modal-body .redactor_box{
+        width: 250px;
+    }
+
+    /*--------------- messageInfo --------------*/
+
+    .messageInfo .msgInfo-operate {
+        display: none;
+    }
+
+    .messageInfo .msgInfo-time {
+        display: none;
+    }
+
+    .messageInfo .msgInfo-sender {
+        display: none;
+    }
+
+    .resopnse-area, #resopnseTextArea {
+        width: 265px;
+    }
+    .msg-response {
+        width: 300px;
+        margin-left: -150px;
+    }
+
+    /*------------ 阅读计划 -----------------*/
+
+   .article_list .articleItem h5 > a {
+        max-width: 40%;
+    }
+
+
+   /*-------------- 订阅 ---------------------*/
+    .mazagineInfo {
+        max-width: 256px;
+    }
+}
+
+
+@media only screen and  (max-width: 420px){
+
+    .list-icon {
+        right: 50px;
+    }
+
+    /*--------- 订阅 ---------*/
+    .mazagineInfo {
+        width: 254px;
+        margin: auto;
+    }
+
+
+    #software_center .software_title {
+        font-size: 16px;
+    }
+
+    #software_center .software_center_content ul li > b {
+        margin-left: 20px;
+    }
+    .ireadAndroid1 .c1 {
+        height: auto;
+    }
+    .ireadAndroid1 .c1 > img {
+        float: none;
+    }
+    .c1 .discrible1 .u2 {
+        position: relative;
+        bottom: 0;
+        margin-top: 30px;
+    }
+
+    .c1 .discrible1 .u1 {
+        margin-top: 30px;
+    }
+
+    .browser .c1 .discrible1 .u2,
+    .browser .c1 .discrible1 .u1,
+    .iNotepc .c1 .discrible1 .u2,
+    .iNotepc .c1 .discrible1 .u1 {
+        float: none;
+        margin: 30px;
+    }
+
+
+
+     .c1 .discrible1 {
+        height: auto !important;
+         margin: auto;
+    }
+
+     .browser .c1 .discrible1 .u2,
+     .browser .c1 .discrible1 .u1,
+    .iNotepc .c1 .discrible1 .u2 ,
+    .iNotepc .c1 .discrible1 .u1 {
+        float: none;
+    }
+
+     .browser .r_text,
+     .browser .l_text {
+         margin: auto 15px;
+     }
+
+     .browser .ireadAndroid2 .c2 img {
+         margin: 20px auto;
+     }
+
+
+    /*--------- 阅读计划 -----*/
+
+    .articleImg {
+        display: none;
+    }
+    .article_card .articleItem {
+        width: 243px;
+        height: 240px;
+    }
+    .app_article_recommad {
+        width: 225px;
+    }
+
+    .loadImg {
+        width: 90%;
+    }
+    /*----------- 编辑杂志 ------------*/
+
+    .editInfo-Avatar {
+        margin: 40px 15px;
+    }
+
+    /*----------- 修改密码 -----------*/
+
+    .editeInfo-relInfo {
+        margin-left: 30px;
+    }
+    .editPassword input[type=text], .editPassword input[type=password] {
+        width: auto;
+    }
+
+    /*----------- user page -----------*/
+
+    .personalHomePage .relevantInfo {
+        width: 100%;
+    }
+
+
+
+    /*----------------- 编辑个人信息 ------------------*/
+    .SystemAvatar {
+        width: 310px;
+        height: 320px;
+        margin-top: -160px;
+        margin-left: -155px;
+    }
+
+    #SystemAvatar-content img {
+        height: 53px;
+        width: 53px;
+    }
+
+
+
+    /*--------------- 创建杂志 --------------*/
+    #createNewMazagine {
+        width: 300px;
+        margin-left: -150px;
+    }
+
+    #createNewMazagine input[type=text],
+    #createNewMazagine input[type=password],
+    .createNewMazagine_cover>div{
+        width: 200px;
+    }
+
+    .createNewMazagine_content > p, .createNewMazagine_cover {
+        width: 238px;
+    }
+
+    .createNewMazagine_content .choseImg {
+        right: 75px;
+    }
+
+    .unloadingImg {
+        width: 125px;
+        height: 167px;
+    }
+
+    .createNewMazagine_cover>div {
+        height: 215px;
+    }
+
+    #createNewMazagine {
+        height: 505px;
+    }
+
+    .createNewMazagine_cover span {
+        top: -80px;
+    }
+
+    #htmlFile {
+        left: 100px;
+    }
+
+    /*--------------- 编辑文章 ---------------*/
+
+    .editArticle-title {
+        width: 265px !important;
+    }
+
+    /*--------------- modal-dialog -----------*/
+    .modal-dialog {
+        width: 300px;
+        margin-left: -150px !important;
+    }
+
+    .modal-body input,
+    .modal-body .redactor_box{
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .article_card {
+        margin: auto auto auto 24px;
+    }
+}
+
