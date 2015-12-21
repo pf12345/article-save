@@ -1,6 +1,7 @@
 /**
  * Created by Christ on 2015/12/18.
  */
+var $ = require('jquery');
 var ajaxQuery = {
     get: function() {
 
@@ -12,7 +13,12 @@ var ajaxQuery = {
             data: params,
             success: function(msg){
                 console.log(msg);
+                if(cb && typeof cb == 'function') {
+                    cb(msg);
+                }
             }
         });
     }
 };
+
+exports.post = ajaxQuery.post;

@@ -26,6 +26,7 @@
             safe: true
           }, function(err, u) {
             if (err) {
+              console.log(err);
               cb(new Error("注册失败"));
             } else {
               cb(null, u);

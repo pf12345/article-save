@@ -20,4 +20,4 @@ var appQuery = {
         })
     }
 };
-export {appQuery};
+exports.ajaxQuery = appQuery;

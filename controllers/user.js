@@ -23,7 +23,6 @@
     if (req.method === "POST") {
       user = {
         name: req.body.name,
-        email: req.body.email,
         password: req.body.password,
         resNum: 0,
         ansNum: 0,
@@ -63,8 +62,8 @@
     var user;
     if (req.method === "POST") {
       user = {
-        email: req.body.userName,
-        password: req.body.pwd
+        name: req.body.name,
+        password: req.body.password
       };
       return userBll.login(user, function(err, result) {
         if (err) {
