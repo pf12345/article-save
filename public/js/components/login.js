@@ -1,6 +1,7 @@
 var React = window.React = require('react');
 var ReactDOM = window.ReactDOM = require('react-dom');
-var ajaxQuery = require('./util/ajaxQuery');
+var ajaxQuery = require('../util/ajaxQuery');
+var List = require('./list').List;
 
 var LoginBox = React.createClass({
     getInitialState: function () {
@@ -32,6 +33,13 @@ var LoginBox = React.createClass({
     login: function() {
         console.log(this.state.name, this.state.password);
         ajaxQuery.post('/user/login', {name: this.state.name, password: this.state.password}, function(msg) {
+            console.log('1234567890')
+            if(msg.code == 0) {
+                console.log('12345678')
+                ajaxQuery.get('/article/getArticles', function(msg) {
+                    console.log(msg);
+                })
+            }
             console.log(msg);
         });
     },
@@ -45,10 +53,7 @@ var LoginBox = React.createClass({
     }
 });
 
-ReactDOM.render(
-    <LoginBox></LoginBox>
-    ,document.getElementById('mainWrap')
-);
+exports.LoginBox = LoginBox;
 
 
 

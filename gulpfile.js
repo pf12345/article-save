@@ -5,7 +5,7 @@ var babel = require('gulp-babel');
 var plumber = require('gulp-plumber');
 
 gulp.task('mainJs', function() {
-	gulp.src('./public/js/login.js')
+	gulp.src('./public/js/main.js')
 		.pipe(plumber())
 		.pipe(babel())
 		.pipe(browserify({

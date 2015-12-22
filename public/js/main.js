@@ -2,8 +2,9 @@
 var $ = window.jQuery = require('jQuery');
 var React = window.React = require('react');
 var ReactDOM = window.ReactDOM = require('react-dom');
-import {UserInfo} from './components/login.js';
+var login = require('./components/login');
+var LoginBox = login.LoginBox;
 ReactDOM.render(
-    <UserInfo></UserInfo>
+    <LoginBox></LoginBox>
     ,document.getElementById('mainWrap')
 );

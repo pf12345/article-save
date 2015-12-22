@@ -3,8 +3,17 @@
  */
 var $ = require('jquery');
 var ajaxQuery = {
-    get: function() {
-
+    get: function(url, cb) {
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function(msg){
+                console.log(msg);
+                if(cb && typeof cb == 'function') {
+                    cb(msg);
+                }
+            }
+        });
     },
     post: function(url, params, cb) {
         $.ajax({
@@ -22,3 +31,4 @@ var ajaxQuery = {
 };
 
 exports.post = ajaxQuery.post;
+exports.get = ajaxQuery.get;

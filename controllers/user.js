@@ -82,7 +82,10 @@
           return res.send({
             code: 0,
             message: 'ok',
-            result: result
+            user: {
+              userId: result._id.toString(),
+              name: result.name
+            }
           });
         }
       });

@@ -46,7 +46,7 @@
      * @param req
      * @param res
      */
-    exports.getArticles = function(req, res) {
+    exports.getArticles_GET = function(req, res) {
         var userId = req.params.userId || req.session.userId;
         return articleBll.getArticles(userId, function(err, result) {
             if (err) {
