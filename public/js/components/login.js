@@ -33,10 +33,13 @@ var LoginBox = React.createClass({
     login: function() {
         console.log(this.state.name, this.state.password);
         ajaxQuery.post('/user/login', {name: this.state.name, password: this.state.password}, function(msg) {
-            console.log('1234567890')
             if(msg.code == 0) {
                 console.log('12345678')
                 ajaxQuery.get('/article/getArticles', function(msg) {
+                    ReactDOM.render(
+                        <List articles={msg.article}></List>
+                        ,document.getElementById('mainWrap')
+                    );
                     console.log(msg);
                 })
             }

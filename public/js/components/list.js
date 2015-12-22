@@ -15,8 +15,8 @@ var ListItem = React.createClass({
                             {this.props.article.title}
                         </a>
                     </div>
-                    <div class="summaryBox">{this.props.article.content}</div>
-                    <div class="memoBox">{this.props.article.created} �ɼ��� {this.props.article.link}</div>
+                    <div class="summaryBox">{this.props.article.content ? this.props.article.content.substring(0, 50) : '没有相关内容'}</div>
+                    <div class="memoBox">{this.props.article.user ? this.props.article.user.name : ' '} 采集于 {this.props.article.link}</div>
                 </div>
             </li>
         )
@@ -33,7 +33,7 @@ var List = React.createClass({
         var todos = [];
 
         for (var key in articles) {
-            todos.push(<TodoItem article={articles[key]} />);
+            todos.push(<ListItem article={articles[key]} />);
         }
         return (
             <div className="contentBox container">
