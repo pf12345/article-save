@@ -150,7 +150,6 @@
    */
 
   setSession = function(req, result) {
-    console.log(result)
     req.session.userId = result._id.toString();
     req.session.userName = result.name;
     req.session.userEmail = result.email;
