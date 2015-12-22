@@ -15,4 +15,13 @@
         return dbArticle.save(article, cb);
     };
 
+    /**
+     * 获取文章列表
+     * @param userId
+     * @param cb
+     */
+    exports.getArticles = function(userId, cb) {
+        return dbArticle.getArticles(userId, cb);
+    }
+
 }).call(this);

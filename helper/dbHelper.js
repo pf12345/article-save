@@ -31,6 +31,7 @@
         return cb(new Error(err));
       } else {
         return db.collection(dbName, function(err, collection) {
+          console.log(err)
           if (err) {
             cb(new Error("数据库连接失败"));
             return mongodb.close();

@@ -9,7 +9,6 @@
      @param content
      */
     exports.save_POST = function(req, res) {
-        console.log(req.body)
         var article;
         article = {
             title: req.body.title,
@@ -17,9 +16,10 @@
             created: new Date(),
             user: {
                 userId: req.session.userId,
-                name: req.session.name,
-                avatar: req.session.avatar
+                name: req.session.userName,
+                avatar: req.session.userAvatar
             },
+            userId: req.session.userId,
             link: req.body.link,
             resNum: 0,
             ansNum: 0,
@@ -40,4 +40,27 @@
             }
         });
     };
+
+    /**
+     * 获取文章列表
+     * @param req
+     * @param res
+     */
+    exports.getArticles = function(req, res) {
+        var userId = req.params.userId || req.session.userId;
+        return articleBll.getArticles(userId, function(err, result) {
+            if (err) {
+                return res.send({
+                    code: 1,
+                    message: err.message
+                });
+            } else {
+                return res.send({
+                    code: 0,
+                    message: 'true',
+                    article: result
+                })
+            }
+        });
+    }
 }).call(this);

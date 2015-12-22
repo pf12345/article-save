@@ -39,4 +39,24 @@
         });
     };
 
+    /**
+     * 获取文章列表
+     * @param userId
+     * @param cb
+     */
+    exports.getArticles = function(userId, cb) {
+        return dbHelper.connectDB("article", cb, function(collection) {
+            return collection.find({
+                "user.userId": userId
+            }).toArray(function(err, items) {
+                mongodb.close();
+                if (err) {
+                    return cb(new Error(err));
+                } else {
+                    return cb(null, items);
+                }
+            });
+        });
+    }
+
 }).call(this);
