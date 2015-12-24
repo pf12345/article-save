@@ -14,21 +14,21 @@
 
 
     /*
-     ╠ё╢Фндуб
+     О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
      */
 
     exports.save = function(article, cb) {
         return dbHelper.connectDB("article", cb, function(collection) {
             return collection.findOne(article, function(err, doc) {
                 if (doc) {
-                    cb(new Error("ря╬╜╢Фтз╦цндуб"));
+                    cb(new Error("О©╫я╬О©╫О©╫О©╫О©╫з╦О©╫О©╫О©╫О©╫О©╫"));
                     return mongodb.close();
                 } else {
                     return collection.insert(article, {
                         safe: true
                     }, function(err, u) {
                         if (err) {
-                            cb(new Error("ндуб╠ё╢Фй╖╟э"));
+                            cb(new Error("О©╫О©╫О©╫б╠О©╫О©╫О©╫й╖О©╫О©╫"));
                         } else {
                             cb(null, u);
                         }
@@ -40,7 +40,7 @@
     };
 
     /**
-     * ╩Ях║ндубап╠М
+     * О©╫О©╫х║О©╫О©╫О©╫О©╫О©╫п╠О©╫
      * @param userId
      * @param cb
      */
@@ -54,6 +54,26 @@
                     return cb(new Error(err));
                 } else {
                     return cb(null, items);
+                }
+            });
+        });
+    }
+
+    /**
+     * Х▌╥Е▐√Е█∙Д╦╙Ф√┤Г╚═
+      * @param Id
+     * @param cb
+     */
+    exports.single = function(Id, cb) {
+        return dbHelper.connectDB("article", cb, function(collection) {
+            return collection.findOne({
+                _id: ObjectId(id)
+            }).toArray(function(err, item) {
+                mongodb.close();
+                if (err) {
+                    return cb(new Error(err));
+                } else {
+                    return cb(null, item);
                 }
             });
         });

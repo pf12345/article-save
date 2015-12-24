@@ -13,7 +13,7 @@ var LoginBox = React.createClass({
                 <div id="loginCover"></div>
                 <form>
                     <p><input type="text" onChange={this.handleChange().name} placeholder="账号" value={this.state.name}/></p>
-                    <p><input type="text" onChange={this.handleChange().password} placeholder="密码" value={this.props.password} /></p>
+                    <p><input type="password" onChange={this.handleChange().password} placeholder="密码" value={this.props.password} /></p>
                     <p><input onClick={this.login} type="button" value="登录"/></p>
                 </form>
             </div>

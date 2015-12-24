@@ -8,7 +8,7 @@
 
 
     /*
-     ╠ё╢Фндуб
+     О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
      */
 
     exports.save = function(article, cb) {
@@ -16,12 +16,21 @@
     };
 
     /**
-     * ╩Ях║ндубап╠М
+     * О©╫О©╫х║О©╫О©╫О©╫О©╫О©╫п╠О©╫
      * @param userId
      * @param cb
      */
     exports.getArticles = function(userId, cb) {
         return dbArticle.getArticles(userId, cb);
+    }
+
+    /**
+     * Х▌╥Е▐√Е█∙Д╦╙Ф√┤Г╚═
+     * @param Id
+     * @param cb
+     */
+    exports.single = function(Id, cb) {
+        return dbArticle.single(Id, cb);
     }
 
 }).call(this);

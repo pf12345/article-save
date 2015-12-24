@@ -4,19 +4,21 @@
 var React = window.React = require('react');
 var ReactDOM = window.ReactDOM = require('react-dom');
 var ajaxQuery = require('../util/ajaxQuery');
+var common = require('../util/common').common;
 
 var ListItem = React.createClass({
     render: function() {
+        var content = common.replaceHtmlTag(this.props.article.content).substring(0, 150);
         return(
-            <li class="liBox">
+            <li className="liBox">
                 <div>
-                    <div class="titleBox">
+                    <div className="titleBox">
                         <a href="javascript:;" target="_blank">
                             {this.props.article.title}
                         </a>
                     </div>
-                    <div class="summaryBox">{this.props.article.content ? this.props.article.content.substring(0, 50) : '没有相关内容'}</div>
-                    <div class="memoBox">{this.props.article.user ? this.props.article.user.name : ' '} 采集于 {this.props.article.link}</div>
+                    <div className="summaryBox">{content}</div>
+                    <div className="memoBox">{this.props.article.user ? this.props.article.user.name : ' '} 采集于 {this.props.article.link}</div>
                 </div>
             </li>
         )
