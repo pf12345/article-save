@@ -9,11 +9,12 @@ var common = require('../util/common').common;
 var ListItem = React.createClass({
     render: function() {
         var content = common.replaceHtmlTag(this.props.article.content).substring(0, 150);
+        var link = '/article/single/' + this.props.article._id;
         return(
-            <li className="liBox">
+            <li className="liBox" data-id={this.props.article._id}>
                 <div>
                     <div className="titleBox">
-                        <a href="javascript:;" target="_blank">
+                        <a href={link} target="_blank">
                             {this.props.article.title}
                         </a>
                     </div>

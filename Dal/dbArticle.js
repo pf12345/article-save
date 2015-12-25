@@ -57,7 +57,7 @@
                 }
             });
         });
-    }
+    };
 
     /**
      * 获取单个文章
@@ -67,8 +67,8 @@
     exports.single = function(Id, cb) {
         return dbHelper.connectDB("article", cb, function(collection) {
             return collection.findOne({
-                _id: ObjectId(id)
-            }).toArray(function(err, item) {
+                _id: ObjectId(Id)
+            }, function(err, item) {
                 mongodb.close();
                 if (err) {
                     return cb(new Error(err));

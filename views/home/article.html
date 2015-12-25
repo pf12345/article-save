@@ -11,15 +11,13 @@
 <body style="background:#f0f0f0;!important;">
 <div id="msgBox"></div>
 <div class="container">
-    <div class="titleBox">性能优化模式 - 美团点评技术团队</div>
-    <div class="memoBox"><a href="http://tech.meituan.com/performance_tuning_pattern.html" target="_blank">原网页</a>由 JohnnieFucker
-        采集于2015-12-17 16:25:23
-        <a href="javascript: void((function() {var element = document.createElement('script');element.id = 'outfox_seed_js';element.charset = 'utf-8',element.setAttribute('src', 'http://fanyi.youdao.com/web2/seed.js?' + Date.parse(new Date()));document.body.appendChild(element);})());">翻译</a>
-        <a class="btnDel" href="/article/createMarkdown/567271731721eaaa54d0f25d" target="_blank">MarkDown</a>
+    <div class="titleBox">{{ article.title }}</div>
+    <div class="memoBox"><a href="{{ article.link }}" target="_blank">原网页</a>由 {{ article.user.name }}
+        采集于 {{ article.created }}
         <button class="btnDel" onclick="delArticle('567271731721eaaa54d0f25d');" style="display:none;">删除</button>
     </div>
     <div class="summaryBox2">
-        <div class="article__content"></div>
+        <div class="article__content">{% autoescape false %}{{article.content}}{% endautoescape %}</div>
     </div>
 </div>
 </body>

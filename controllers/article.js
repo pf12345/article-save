@@ -3,6 +3,7 @@
  */
 (function() {
     var articleBll = require('../Bll/articleBll');
+    var moment = require('moment');
 
     exports.router = function(app) {
         /**
@@ -10,16 +11,18 @@
          */
         app.post('/article/save', function(req, res) {
             var article;
+            console.log('article 14');
+            console.log(req.session);
             article = {
                 title: req.body.title,
                 content: req.body.content,
-                created: new Date(),
+                created: moment().format("YYYY-MM-DD HH:mm:ss"),
                 user: {
-                    userId: req.session.userId,
-                    name: req.session.userName,
-                    avatar: req.session.userAvatar
+                    userId: req.session.get('userId'),
+                    name: req.session.get('userName'),
+                    avatar: req.session.get('userAvatar')
                 },
-                userId: req.session.userId,
+                userId: req.session.get('userId'),
                 link: req.body.link,
                 resNum: 0,
                 ansNum: 0,
@@ -45,7 +48,7 @@
          * 获取文章列表
          */
         app.get('/article/getArticles', function(req, res, next) {
-            var userId = req.params.userId || req.session.userId;
+            var userId = req.params.userId || req.session.get('userId');
             return articleBll.getArticles(userId, function(err, result) {
                 if (err) {
                     return res.send({
@@ -69,15 +72,14 @@
          */
         app.get('/article/single/:id', function(req, res, next) {
             var id = req.params.id;
-            console.log(id);
             return articleBll.single(id, function(err, result) {
-                console.log(result);
                 if(err) {
                     res.send({
                         code: 1,
                         message: err.message
                     });
                 }else{
+                    console.log(result.created.toString())
                     res.render("home/article", {
                         article: result
                     });

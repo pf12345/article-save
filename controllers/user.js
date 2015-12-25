@@ -72,7 +72,8 @@
           });
         } else {
           setSession(req, result);
-          console.log(req.session);
+          console.log('user 75 ');
+          console.log(req.session)
           return res.send({
             code: 0,
             message: 'ok',
@@ -91,13 +92,15 @@
      * @param res
      */
     app.get('/user/isLogin', function(req, res, next) {
-      if(req.session.userId) {
+      console.log('user 94 ');
+      console.log(req.session)
+      if(req.session.get('userId')) {
         res.send({
           code: 0,
           message: 'true',
           user: {
-            userId: res.session.userId,
-            nickname: res.session.nickname
+            userId: req.session.get('userId'),
+            nickname: req.session.get('userName')
           }
         });
       }else {
@@ -113,7 +116,7 @@
      */
     app.get('/user/getUserInfo', function(req, res, next) {
       var userId;
-      userId = req.query.id || req.session.userId;
+      userId = req.query.id || req.session.get('userId');
       return userBll.getUserInfo(userId, function(err, user) {
         if (err) {
           return res.send({
@@ -147,10 +150,12 @@
    */
 
   setSession = function(req, result) {
-    req.session.userId = result._id.toString();
-    req.session.userName = result.name;
-    req.session.userEmail = result.email;
-    req.session.userAvatar = result.avatar;
+    req.session.set('userId', result._id.toString());
+    req.session.set('userName', result.name);
+    req.session.set('userEmail', result.email);
+    req.session.set('userAvatar', result.avatar);
+    console.log('user 157')
+    console.log(req.session);
   };
 
 }).call(this);
