@@ -65,9 +65,9 @@ pre {
 
 .logo {
     background: url('../images/logobig.png') center center no-repeat transparent;
-    width: 250px;
-    height: 70px;
-    margin: 0 auto;
+    width: 150px;
+    height: 40px;
+    margin: 20px auto;
     background-size: contain;
 }
 
@@ -142,7 +142,7 @@ pre {
 
 
 /*login*/
-#loginBox form, #loginCover {
+#loginBox form, #loginCover, #registerBox form, #registerCover {
     width: 400px;
     height: 300px;
     position: absolute;
@@ -152,28 +152,49 @@ pre {
     margin-left: -200px;
     border-radius: 5px;
 }
-#loginCover {
+#registerBox form, #registerCover {
+    height: 360px;
+}
+#loginCover, #registerCover {
     opacity: 0.7;
     background: #fff;
 }
-#loginBox form input {
+.lrBox form input {
     margin: 10px 20px;
     width: 360px;
     padding: 5px 10px;
     outline: none;
 }
-#loginBox form input[type=text] {
+.lrBox form input[type=text] {
     box-shadow: none;
 }
-#loginBox form input[type=button] {
-    margin-top: 50px;
+.lrBox form input[type=button] {
+    margin-top: 30px;
     background: #a4cd66;
     border: none;
 }
-#loginBox form p {
+.lrBox form p {
     margin: 0;
     padding: 0;
 }
-#loginBox form {
+.lrBox form {
     padding-top: 30px;
+}
+.lrWaring {
+    font-size: 12px;
+    color: red;
+    margin: 0 20px;
+}
+.lrHide {
+    visibility: hidden;
+}
+.lrShow {
+    visibility: visible;
+}
+.lrGoLoginOrRe {
+    font-size: 12px;
+    color: #9299ab !important;
+    margin: 0 20px;
+    float: right;
+    cursor: pointer;
 }

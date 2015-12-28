@@ -132,16 +132,17 @@
         }
       });
     })
-  };
 
-
-
-  /*获取用户信息
-      退出登录
-   */
-  exports.signOut = function(req, res) {
-    res.session.clear();
-    return res.redirect("/explore");
+    /**
+     * 退出登录
+     */
+    app.get('/user/signOut', function(req, res, next) {
+      req.session.clear(function (err){
+        if (!err) {
+          res.redirect("/");
+        }
+      });
+    })
   };
 
 
