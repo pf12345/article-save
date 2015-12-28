@@ -73,19 +73,19 @@ $_id("inote_read_clear").onclick = function(tab) {
     }
 };
 
-if (localStorage.articleNum) {
-    if (localStorage.articleNum > 99) {
-        document.getElementById("inote_article_num").innerHTML = "99+";
-        chrome.browserAction.setBadgeText({
-            text: "99+"
-        });
-    } else {
-        document.getElementById("inote_article_num").innerHTML = parseInt(localStorage.articleNum);
-        chrome.browserAction.setBadgeText({
-            text: localStorage.articleNum
-        });
-    }
-}
+//if (localStorage.articleNum) {
+//    if (localStorage.articleNum > 99) {
+//        document.getElementById("inote_article_num").innerHTML = "99+";
+//        chrome.browserAction.setBadgeText({
+//            text: "99+"
+//        });
+//    } else {
+//        document.getElementById("inote_article_num").innerHTML = parseInt(localStorage.articleNum);
+//        chrome.browserAction.setBadgeText({
+//            text: localStorage.articleNum
+//        });
+//    }
+//}
 
 
 /**
@@ -153,16 +153,16 @@ function readLaterPost(tablinkvar){
                     success: function(res){
                         if(res.code == 0){
                             window.close()
-                            localStorage.articleNum = parseInt(localStorage.articleNum) + 1;
-                            if(localStorage.articleNum>99){
-                                chrome.browserAction.setBadgeText({
-                                    text: "99+"
-                                });
-                            }else{
-                                chrome.browserAction.setBadgeText({
-                                    text: localStorage.articleNum
-                                });
-                            }
+                            //localStorage.articleNum = parseInt(localStorage.articleNum) + 1;
+                            //if(localStorage.articleNum>99){
+                            //    chrome.browserAction.setBadgeText({
+                            //        text: "99+"
+                            //    });
+                            //}else{
+                            //    chrome.browserAction.setBadgeText({
+                            //        text: localStorage.articleNum
+                            //    });
+                            //}
                         }else{
                             var msg = JSON.stringify(res.message);
                             chrome.tabs.executeScript(null,{

@@ -108,7 +108,7 @@ chrome.extension.onMessage.addListener(
                 });
                 break;
             case 'articleNumChange':
-                setBadgeText();  break;
+                //setBadgeText();  break;
             case 'saveBookMarkReminder':
                 chrome.tabs.getSelected(null, function(tab) {
                     var tablink = tab.url;
@@ -151,14 +151,14 @@ try {
  * 未读文章数超过99时
  * 显示99+
  * */
-function setBadgeText(){
-    if(localStorage.articleNum>99){
-        chrome.browserAction.setBadgeText({
-            text: "99+"
-        });
-    }else{
-        chrome.browserAction.setBadgeText({
-            text: localStorage.articleNum
-        });
-    }
-}
+//function setBadgeText(){
+//    if(localStorage.articleNum>99){
+//        chrome.browserAction.setBadgeText({
+//            text: "99+"
+//        });
+//    }else{
+//        chrome.browserAction.setBadgeText({
+//            text: localStorage.articleNum
+//        });
+//    }
+//}

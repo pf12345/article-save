@@ -501,12 +501,12 @@ var inoteApp = angular.module('inoteApp', [
 
             if (localStorage.userData && localStorage.token) {
                 //获取未读数量
-                apiHelper.get('api/Article/GetUnreadCount', {}, function (data) {
-                    if (data.code === 0) {
-                        localStorage.articleNum = data.value;
-                        responseToParent("articleNumChange");
-                    }
-                });
+                //apiHelper.get('api/Article/GetUnreadCount', {}, function (data) {
+                //    if (data.code === 0) {
+                //        localStorage.articleNum = data.value;
+                //        responseToParent("articleNumChange");
+                //    }
+                //});
             }
 
         }

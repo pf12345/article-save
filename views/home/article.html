@@ -15,7 +15,7 @@
     <div class="titleBox">{{ article.title }}</div>
     <div class="memoBox"><a href="{{ article.link }}" target="_blank">原网页</a>由 {{ article.user.name }}
         采集于 {{ article.created }}
-        <button class="btnDel" onclick="delArticle('567271731721eaaa54d0f25d');" style="display:none;">删除</button>
+        <!--<button class="btnDel" onclick="delArticle('567271731721eaaa54d0f25d');" >删除</button>-->
     </div>
     <div class="summaryBox2">
         <div class="article__content">{% autoescape false %}{{article.content}}{% endautoescape %}</div>

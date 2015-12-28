@@ -77,6 +77,27 @@
                 }
             });
         });
+    };
+
+    /**
+     * 删除单条文章
+     * @param Id
+     * @param cb
+     */
+    exports.deleteItem = function(Id, cb) {
+        console.log('delete---------', Id)
+        dbHelper.connectDB("article", cb, function(collection) {
+            collection.remove({
+                _id: ObjectId(Id)
+            }, function(err, result) {
+                mongodb.close();
+                if(err) {
+                    cb(new Error(err));
+                }else{
+                    cb(null, result);
+                }
+            })
+        })
     }
 
 }).call(this);

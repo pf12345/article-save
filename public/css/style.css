@@ -49,6 +49,7 @@ pre {
     background: #ffeeaa;
     border-radius: 3px;
     display: none;
+    text-align: center;
 }
 
 .btnDel {
@@ -111,7 +112,10 @@ pre {
     margin-top: 20px;
     color: #999;
 }
-
+.memoBox a {
+    color: #999;
+    float: right;
+}
 .siteIco {
     height: 1em;
     margin: 0 5px;

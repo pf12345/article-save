@@ -31,6 +31,15 @@
      */
     exports.single = function(Id, cb) {
         return dbArticle.single(Id, cb);
+    };
+
+    /**
+     * 删除单条文章
+     * @param Id
+     * @param cb
+     */
+    exports.deleteItem = function(Id, cb) {
+        return dbArticle.deleteItem(Id, cb);
     }
 
 }).call(this);
