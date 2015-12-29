@@ -6,6 +6,8 @@ var ReactDOM = window.ReactDOM = require('react-dom');
 var ajaxQuery = require('../util/ajaxQuery');
 var common = require('../util/common').common;
 var showMsg = require('../util/common').showMsg;
+var TodoStore = require('../stores/TodoStore');
+var TodoActions =  require('../actions/TodoActions');
 
 var ListItem = React.createClass({
     render: function() {
@@ -32,14 +34,15 @@ var ListItem = React.createClass({
         ajaxQuery.post('/article/deleteItem', {id: id}, function(msg) {
             if(msg.code == 0) {
                 common.showMsg('删除成功');
-                ajaxQuery.get('/article/getArticles', function(msg) {
-                    _this.setState({waringClass: 'lrHide'});
-                    ReactDOM.render(
-                        <List articles={msg.article}></List>
-                        ,document.getElementById('mainWrap')
-                    );
-                    console.log(msg);
-                })
+                TodoActions.destroy(id);
+                //ajaxQuery.get('/article/getArticles', function(msg) {
+                //    _this.setState({waringClass: 'lrHide'});
+                //    ReactDOM.render(
+                //        <List articles={msg.article}></List>
+                //        ,document.getElementById('mainWrap')
+                //    );
+                //    console.log(msg);
+                //})
             }else{
                 common.showMsg('删除失败');
             }
@@ -47,16 +50,28 @@ var ListItem = React.createClass({
 
     }
 });
-
+function getTodoState() {
+    return {
+        articles: TodoStore.getAll()
+    };
+}
 var List = React.createClass({
+    getInitialState: function() {
+        return getTodoState();
+    },
+    componentDidMount: function() {
+        TodoStore.addChangeListener(this._onChange);
+    },
+    componentWillUnmount: function() {
+        TodoStore.removeChangeListener(this._onChange);
+    },
     render: function() {
-        if (Object.keys(this.props.articles).length < 1) {
+        if (Object.keys(this.state.articles).length < 1) {
             return null;
         }
 
-        var articles = this.props.articles;
+        var articles = this.state.articles;
         var todos = [];
-
         for (var key in articles) {
             todos.push(<ListItem key={articles[key]._id}  article={articles[key]} />);
         }
@@ -65,6 +80,9 @@ var List = React.createClass({
                 <ul>{todos}</ul>
             </div>
         );
+    },
+    _onChange: function() {
+        this.setState(getTodoState());
     }
 });
 

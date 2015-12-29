@@ -5,6 +5,7 @@ var ReactDOM = window.ReactDOM = require('react-dom');
 var LoginBox = require('./components/login').LoginBox;
 var ajaxQuery = require('./util/ajaxQuery');
 var List = require('./components/list').List;
+var TodoStore = require('./stores/TodoStore');
 
 ajaxQuery.get('/user/isLogin', function(msg) {
     if(msg.code == 1) {
@@ -14,12 +15,13 @@ ajaxQuery.get('/user/isLogin', function(msg) {
         );
     }else{
         ajaxQuery.get('/article/getArticles', function(msg) {
+            TodoStore.getAll(msg.article);
             ReactDOM.render(
-                <List articles={msg.article}></List>
+                <List></List>
                 ,document.getElementById('mainWrap')
             );
         })
     }
-})
+});
 
 

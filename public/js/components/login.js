@@ -3,6 +3,7 @@ var ReactDOM = window.ReactDOM = require('react-dom');
 var ajaxQuery = require('../util/ajaxQuery');
 var List = require('./list').List;
 var RegisterBox = require('./reigster').RegisterBox;
+var TodoStore = require('../stores/TodoStore');
 
 var LoginBox = React.createClass({
     getInitialState: function () {
@@ -48,8 +49,9 @@ var LoginBox = React.createClass({
             if(msg.code == 0) {
                 ajaxQuery.get('/article/getArticles', function(msg) {
                     _this.setState({waringClass: 'lrHide'});
+                    TodoStore.getAll(msg.article);
                     ReactDOM.render(
-                        <List articles={msg.article}></List>
+                        <List></List>
                         ,document.getElementById('mainWrap')
                     );
                     console.log(msg);
