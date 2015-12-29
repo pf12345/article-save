@@ -16,16 +16,16 @@
    "description": "最适合中国人的微收藏和稍后阅读工具，它帮助你快速收藏网页，并立即自动生成自己的电子杂志，以备你之后阅读、管理和订阅分享。",
    "icons": {
       "16": "image/icons/icon16.png",
-      "19": "image/icons/icon19.png",
+      "19": "image/icons/icon24.png",
       "48": "image/icons/logo.png"
    },
    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgrGLdRXfHaDNTvgdgZT1aZNpIdsY6iPVx8/2/TRmwFQaacWpUkZJQGPZDz8XDMnmtKDxS/+fyK0c7r7RJ46ClSVc0rXbqqaIdXr4G3Ug7diOLa//iplhDYJqWMr9qZRAMEJVSltHFjA4Y9vMlAz6uughMJOpDyeB89cf82Qo42x2t62I/X0YyHDGAHsPTMN+C1LlbnD/SN3zLqqENmGpMlibl5U8Ufubj1LVe50sOTSdtNMLJQ2bcRDrsXcOvwC4BXUImngkQuOEtELXJmekTvSQHz8+aXcypf2tlI/aJnGpNhBcNYdug66WtjSu+UMgJpZzo2Hj1Ztvm3URJZBQzwIDAQAB",
    "manifest_version": 2,
    "minimum_chrome_version": "6.0.0.0",
-   "name": "iNote微收藏",
+   "name": "ARTICLE",
    "permissions": [ "contextMenus", "storage", "tabs", "*://*/*" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
    "version": "1.0.9",
    "content_security_policy": "script-src 'self' https://127.0.0.1:3000; object-src 'self'",
-   "web_accessible_resources": [ "image/icons/icon--19.png", "index.html", "js/angular.min.js", "content/views/magazine.html", "js/angular.min.js.map", "image/icons/twoFontBtn.png", "image/icons/icon_3.png", "image/icons/discover.png", "image/icons/icon1.png", "js/angular-animate.min.js.map", "js/angular-route.min.js.map"]
+   "web_accessible_resources": ["index.html", "js/angular.min.js", "js/angular.min.js.map", "image/icons/icon_3.png", "image/icons/discover.png", "image/icons/icon1.png", "js/angular-animate.min.js.map", "js/angular-route.min.js.map"]
 }
