@@ -1,4 +1,8 @@
-nodejs-express-mongodb-website
+ARTIClE
 ==============================
 
-使用nodejs、express、mongodb网站
+使用chrome插件对感兴趣文章进行纯净阅读及收藏至服务器
+
+后台使用nodejs、express4、mongodb
+
+前端web使用react、flux、gulp
