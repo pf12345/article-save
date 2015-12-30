@@ -9,7 +9,7 @@ var User = {
     isLoggedIn: false
 };
 
-var inoteApp = angular.module('inoteApp', [
+var articleApp = angular.module('articleApp', [
         'ngRoute',
         'ngAnimate',
         'ui.bootstrap',
@@ -18,8 +18,8 @@ var inoteApp = angular.module('inoteApp', [
         'ngDragDrop'
     ])
     .config(function ($routeProvider, $compileProvider ,$controllerProvider) {
-        inoteApp.registerCtrl = $controllerProvider.register;
-        inoteApp.resolveScriptDeps = function(dependencies){
+        articleApp.registerCtrl = $controllerProvider.register;
+        articleApp.resolveScriptDeps = function(dependencies){
             return function($q,$rootScope){
                 var deferred = $q.defer();
                 $script(dependencies, function() {
@@ -43,7 +43,7 @@ var inoteApp = angular.module('inoteApp', [
                 controller: 'EditArticleCtrl',
                 templateUrl: 'content/views/editArticle.html',
                 resolve: {
-                    deps: inoteApp.resolveScriptDeps([
+                    deps: articleApp.resolveScriptDeps([
                         'plugins/redactor9/lang/zh_cn.js',
                         'plugins/redactor9/fullscreen.js'
                     ])
@@ -55,7 +55,7 @@ var inoteApp = angular.module('inoteApp', [
                 templateUrl: 'content/views/article.html',
                 publicAccess: true,
                 resolve: {
-                    deps: inoteApp.resolveScriptDeps([
+                    deps: articleApp.resolveScriptDeps([
                         'plugins/redactor9/lang/zh_cn.js',
                         'plugins/redactor9/fullscreen.js',
                         'js/jquery.zclip.min.js'
@@ -309,7 +309,7 @@ var inoteApp = angular.module('inoteApp', [
 /**
  * 运行时
  */
-inoteApp.run(function ($rootScope, $location, UserService, apiHelper, $route, $window) {
+articleApp.run(function ($rootScope, $location, UserService, apiHelper, $route, $window) {
 
     $rootScope.$on('$routeChangeStart', function (event, next, current) {
 
@@ -347,7 +347,7 @@ inoteApp.run(function ($rootScope, $location, UserService, apiHelper, $route, $w
 /**
  * api服务
  */
-inoteApp.service('apiHelper', function ($http, UserService) {
+articleApp.service('apiHelper', function ($http, UserService) {
     $http.defaults.useXDomain = true;
     this.get = function (apiUrl, params, onSuccess, onError) {
         getService(apiUrl, params, onSuccess, function (data, status) {
@@ -455,7 +455,7 @@ inoteApp.service('apiHelper', function ($http, UserService) {
 /**
  * 用户服务
  */
-inoteApp.service('UserService', function ($modal, $location, $window) {
+articleApp.service('UserService', function ($modal, $location, $window) {
     /**
      * 登录后操作
      * @param onSuccess

@@ -35,14 +35,6 @@ var ListItem = React.createClass({
             if(msg.code == 0) {
                 common.showMsg('删除成功');
                 TodoActions.destroy(id);
-                //ajaxQuery.get('/article/getArticles', function(msg) {
-                //    _this.setState({waringClass: 'lrHide'});
-                //    ReactDOM.render(
-                //        <List articles={msg.article}></List>
-                //        ,document.getElementById('mainWrap')
-                //    );
-                //    console.log(msg);
-                //})
             }else{
                 common.showMsg('删除失败');
             }

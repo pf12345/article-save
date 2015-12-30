@@ -113,7 +113,7 @@ chrome.extension.onMessage.addListener(
                 chrome.tabs.getSelected(null, function(tab) {
                     var tablink = tab.url;
                     chrome.tabs.executeScript(null,{
-                        code:'inoteAppShowMsg("正在添加至收藏......");'
+                        code:'AppShowMsg("正在添加至收藏......");'
                     })
                     readLaterSend(tablink);
                 });

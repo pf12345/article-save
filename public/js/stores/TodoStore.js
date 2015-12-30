@@ -29,7 +29,6 @@ function destroy(id) {
      _todos.splice(i, 1);
     }
   }
-  //console.log(id, _todos);
 }
 
 

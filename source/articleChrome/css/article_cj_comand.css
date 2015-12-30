@@ -235,7 +235,7 @@ input{
     height: 100%;
     z-index: 9999;
 }
-#inoteAppShowMsg{
+#AppShowMsg{
     width: 100%;
     position: fixed;
     top: 0;
@@ -244,7 +244,7 @@ input{
     background-color: #f2f2f2;
     padding-bottom: 10px;
 }
-#inoteAppShowMsg h3{
+#AppShowMsg h3{
     width: 100%;
     text-align: center !important;
     padding: 11px;
@@ -252,11 +252,11 @@ input{
     color: #666 !important;
     font-size: 18px !important;
 }
-#inoteAppShowMsg a{
+#AppShowMsg a{
     font-size: 16px;
     margin: 15px;
 }
-#inoteAppShowMsg a:hover{
+#AppShowMsg a:hover{
     color: #FF6700;
     text-decoration: underline;
 }

@@ -2,20 +2,20 @@
  * Created by lovely on 14-1-16.
  */
 
-    var inoteSite;
+    var ArticleSite;
 
     /**
      * 提示信息
      * @param msg
      * @param close
      */
-    function inoteAppShowMsg(msg,close){
+    function AppShowMsg(msg,close){
         var imgURL = chrome.extension.getURL("image/icons/twoFontBtn.png");
         $("#dropDownToolTip").remove();//清除已经有的提示
-        $("#inoteAppShowMsg").remove();
+        $("#AppShowMsg").remove();
         var dropDownToolTip = document.createElement("div");
-        dropDownToolTip.id = 'inoteAppShowMsg';
-        dropDownToolTip.className = 'iNoteAppClass';
+        dropDownToolTip.id = 'AppShowMsg';
+        dropDownToolTip.className = 'articleAppClass';
         dropDownToolTip.innerHTML="<div class='dropDownToolTipcontent'>" +
             "<h3>" +msg +
             "</h3>"+
@@ -25,7 +25,7 @@
 
         if(close){
             setTimeout(function(){
-                $("#inoteAppShowMsg").remove();
+                $("#AppShowMsg").remove();
             },3000)
         }
 
@@ -43,9 +43,9 @@
             var tempIframe = document.getElementById("inoteIframe");
             tempIframe.setAttribute("style",'');
             var iframeSite = $("#inoteIframe").attr('data-inote-site');
-            if(iframeSite == inoteSite) {
+            if(iframeSite == ArticleSite) {
                 inoteShowMessage("您正在使用此功能哦");
-            }else if(inoteSite == 'cleanRead') {
+            }else if(ArticleSite == 'cleanRead') {
                 inoteShowMessage("请关闭应用后再试");
             }else{
                 intoeSiteSwitch(tempIframe);
@@ -66,7 +66,7 @@
      * @param tempIframe
      */
     function intoeSiteSwitch(tempIframe){
-        switch (inoteSite){
+        switch (ArticleSite){
             case "login":
                 tempIframe.src = chrome.extension.getURL ("index.html#/login");
                 $(tempIframe).attr("data-inote-site","login");break;
@@ -118,7 +118,7 @@
      * 清除所有已有的提示框
      */
     function clearAllReminder(){
-        var closeArr = document.getElementsByClassName("iNoteAppClass");
+        var closeArr = document.getElementsByClassName("articleAppClass");
         for(var i= 0,_i=closeArr.length;i<_i;i++){
             var node = closeArr[i];
             node.parentNode.removeChild(node);

@@ -46,7 +46,7 @@ function $_id(obj) {
 /**
  * 纯净阅读
  * */
-$_id("inote_read_clear").onclick = function(tab) {
+$_id("read_clear").onclick = function(tab) {
     chrome.tabs.executeScript(null, {
         file: "js/jquery-2.0.3.min.js"
     });
@@ -64,10 +64,10 @@ $_id("inote_read_clear").onclick = function(tab) {
             });
         localStorage.site = "cleanRead";
         chrome.tabs.executeScript(null, {
-            code: 'var inoteSite = "cleanRead";'
+            code: 'var ArticleSite = "cleanRead";'
         });
         chrome.tabs.executeScript(null, {
-            file: "js/inote_clear_read.js"
+            file: "js/clear_read.js"
         });
         addCreateIframeCode(tab);
     }
@@ -91,7 +91,7 @@ $_id("inote_read_clear").onclick = function(tab) {
 /**
  * 稍后阅读
  * */
-$_id("inote_read_later").onclick = function(tab) {
+$_id("read_later").onclick = function(tab) {
     chrome.tabs.getSelected(null, function(tab) {
         var tablink = tab.url;
         console.log(tablink)
@@ -129,7 +129,7 @@ $_id("inote_read_later").onclick = function(tab) {
 */
 function readLaterPost(tablinkvar){
     chrome.tabs.executeScript(null,{
-        code:'inoteAppShowMsg("正在添加至收藏......", true);'
+        code:'AppShowMsg("正在添加至收藏......", true);'
     });
     chrome.extension.onRequest.addListener(
         function(request) {
@@ -153,20 +153,10 @@ function readLaterPost(tablinkvar){
                     success: function(res){
                         if(res.code == 0){
                             window.close()
-                            //localStorage.articleNum = parseInt(localStorage.articleNum) + 1;
-                            //if(localStorage.articleNum>99){
-                            //    chrome.browserAction.setBadgeText({
-                            //        text: "99+"
-                            //    });
-                            //}else{
-                            //    chrome.browserAction.setBadgeText({
-                            //        text: localStorage.articleNum
-                            //    });
-                            //}
                         }else{
                             var msg = JSON.stringify(res.message);
                             chrome.tabs.executeScript(null,{
-                                code:'inoteAppShowMsg('+msg+',true);'
+                                code:'AppShowMsg('+msg+',true);'
                             })
                             window.close();
                         }
@@ -179,19 +169,10 @@ function readLaterPost(tablinkvar){
         });
     localStorage.site = "cleanRead";
     chrome.tabs.executeScript(null, {
-        code: 'var inoteSite = "cleanRead";'
+        code: 'var ArticleSite = "cleanRead";'
     });
     chrome.tabs.executeScript(null, {
-        file: "js/inote_clear_read.js"
+        file: "js/clear_read.js"
     });
 }
-
-/**
- * 最近收藏数目点击
- **/
-$("#inote_article_num").click(function(event) {
-    event.stopPropagation();
-    window.open(BaseApiUrl);
-    window.close();
-});
 

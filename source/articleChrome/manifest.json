@@ -9,7 +9,7 @@
    },
    "content_scripts": [ {
       "all_frames": true,
-      "css": [ "css/inote_cj_comand.css" ],
+      "css": [ "css/article_cj_comand.css" ],
       "js": [ "js/background.js", "js/jquery-1.11.0.min.js", "js/angular.min.js", "js/common.js" ],
       "matches": [ "*://*/*" ]
    } ],
