@@ -16,7 +16,8 @@ var serveStatic = require('serve-static');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var mps = require("multi-process-session");
-require("babel-core/register");
+var compression = require('compression');
+//require("babel-core/register");
 
 //var sessionStore = new MongoStore({
 //    db:config.dbInfo.db
@@ -37,11 +38,13 @@ app.all('*', function(req, res, next) {
 app.use(cookieParser());
 app.use(mps());
 app.set('views', path.join(__dirname, 'views'));
+//app.engine('html', require('ejs').renderFile);
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 app.set('view cache', false);
 swig.setDefaults({ cache: false });
+app.use(compression());
 
 //app.use(favicon());
 app.use(morgan('combined'));

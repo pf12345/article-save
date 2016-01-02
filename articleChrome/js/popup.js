@@ -1,7 +1,7 @@
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-var BaseApiUrl = "http://127.0.0.1:3000";
+var BaseApiUrl = "http://127.0.0.1:8000";
 
 var reg_chrome = /undefined|chrome\:\/\/|se\:\/\/extensions\-frame|chrome\.google/i ,//chrome相关页面地址
     reg_app = /chrome\-extension\:\/\//i;//app运行相关页面地址

@@ -3,7 +3,7 @@
  * 端口配置
  * @type {number}
  */
-exports.port = 3000;
+exports.port = 8000;
 
 /**
  * 日志地址
