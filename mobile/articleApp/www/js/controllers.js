@@ -54,9 +54,7 @@ var app = angular.module('starter.controllers', [])
 
 .controller('ArticlesCtrl', function($scope , Articles, $timeout) {
     $timeout(function(){
-      $scope.$apply(function() {
-        angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
-      })
+      angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
     },1000);
     Articles.all($scope);
   })

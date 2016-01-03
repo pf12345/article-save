@@ -38,10 +38,10 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
           success(function(data, status, headers, config) {
             console.log(data);
             if(data.code == 0) {
+              $location.path('/app/articles');
               $timeout(function(){
                 angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
               },1000);
-              $location.path('/app/articles');
             } else{
               $location.path('/app/login');
             }
@@ -49,6 +49,11 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
           error(function(data) {
             //$scope.showAlert(data.message);
           });
+      }else if(toState.name != 'app.article'){
+        $timeout(function(){
+          angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
+        },1000);
+
       }
 
 		  if($rootScope.authStatus){
