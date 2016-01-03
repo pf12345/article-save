@@ -1,0 +1,11 @@
+<ion-view view-title="OST Team">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="articlelist in articles" class="item item-avatar" href="#/app/article/{{articlelist.id}}">
+		   <img ng-src="{{articlelist.face}}">
+		   <h2>{{articlelist.name}}</h2>
+		  <p>Opensourcetechnologies ({{articlelist.deseg}})</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

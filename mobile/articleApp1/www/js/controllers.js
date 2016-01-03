@@ -22,10 +22,10 @@ var app = angular.module('starter.controllers', [])
 		}
 
 		if(user.username && user.password){
-      $http.post('http://192.168.0.103:8000/user/login', {name: user.username, password: user.password}).
+      $http.post('http://192.168.199.103:8000/user/login', {name: user.username, password: user.password}).
         success(function(data, status, headers, config) {
          if(data.code == 0) {
-           $location.path('/app/articles');
+           $location.path('/app/dashboard');
          } else{
            $scope.showAlert(data.message);
          }
@@ -52,25 +52,16 @@ var app = angular.module('starter.controllers', [])
   //--------------------------------------------
 })
 
-.controller('ArticlesCtrl', function($scope , Articles, $timeout) {
-    $timeout(function(){
-      $scope.$apply(function() {
-        angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
-      })
-    },1000);
-    Articles.all($scope);
-  })
-
-.controller('ArticleCtrl', function($scope, $stateParams , Articles, $rootScope) {
-    $scope.article = {
-      title: '标题',
-      content: '加载中...'
-    }
-    Articles.get($stateParams.articleId, $scope);
+.controller('ProfilesCtrl', function($scope , Profiles) {
+    $scope.profiles = Profiles.all();
 })
 
-.controller('DashCtrl', function($scope, $stateParams , Articles) {
-	$scope.articles = Articles.all($scope);
+.controller('ProfileCtrl', function($scope, $stateParams , Profiles) {
+	$scope.profile = Profiles.get($stateParams.profileId);
+})
+
+.controller('DashCtrl', function($scope, $stateParams , Profiles) {
+	$scope.profiles = Profiles.all();
 })
 
 .controller('SignInCtrl', function($scope) {

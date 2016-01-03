@@ -8,6 +8,6 @@ exports.init = function(app) {
         res.setHeader("Content-Type", "text/plain");
         res.render('home/index', {});
     });
-   user.router(app);
-   article.router(app);
+    user.router(app);
+    article.router(app);
 };

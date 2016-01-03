@@ -1,9 +1,9 @@
-<ion-view view-title="Dashboard" hide-back-button="true">
+<ion-view view-title="首页" hide-back-button="true">
   <ion-content>
-	   <div class="card" ng-repeat="profilelist in profiles" >
-		  <div class="item item-divider">{{profilelist.name}}</div>
-		  <div class="item item-text-wrap">{{profilelist.deseg}}</div>
-	  </div>
-    </ion-list>
+    <ion-item ng-repeat="articlelist in articles" class="item" href="#/app/article/{{articlelist._id}}">
+      <!--<img ng-src="http://www.baidu.com/favicon.ico" style="border-radius: 0;">-->
+      <h2>{{articlelist.title}}</h2>
+      <p ng-bind-html="articlelist.content ? articlelist.content.substring(0,150) : ''"></p>
+    </ion-item>
   </ion-content>
 </ion-view>

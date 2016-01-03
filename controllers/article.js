@@ -88,6 +88,29 @@
         });
 
         /**
+         * 获取单个文章
+         * @param req
+         * @param res
+         */
+        app.get('/article/getArticle/:id', function(req, res, next) {
+            var id = req.params.id;
+            return articleBll.single(id, function(err, result) {
+                if(err) {
+                    res.send({
+                        code: 1,
+                        message: err.message
+                    });
+                }else{
+                    res.send({
+                        code: 0,
+                        message: 'success',
+                        article: result
+                    });
+                }
+            })
+        });
+
+        /**
          * 删除单条文章
          */
         app.post('/article/deleteItem', function(req, res, next) {

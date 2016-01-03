@@ -6,17 +6,10 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 
-.run(function($ionicPlatform , $rootScope, $timeout, $http, $location) {
-    $rootScope.showAlert = function(msg) {
-      var alertPopup = $ionicPopup.alert({
-        title: 'Warning Message',
-        template: msg
-      });
-    };
+.run(function($ionicPlatform , $rootScope, $timeout) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
@@ -31,26 +24,7 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
      $rootScope.authStatus = false;
 	 //stateChange event
 	  $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
-      console.log(toState)
 		  $rootScope.authStatus = toState.authStatus;
-      if(toState.name == 'app.login') {
-        $http.get('http://192.168.0.103:8000/user/isLogin').
-          success(function(data, status, headers, config) {
-            console.log(data);
-            if(data.code == 0) {
-              $timeout(function(){
-                angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
-              },1000);
-              $location.path('/app/articles');
-            } else{
-              $location.path('/app/login');
-            }
-          }).
-          error(function(data) {
-            //$scope.showAlert(data.message);
-          });
-      }
-
 		  if($rootScope.authStatus){
 
 
@@ -59,6 +33,12 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
 		console.log("URL : "+toState.url);
+		if(toState.url=='/dashboard'){
+			console.log("match : "+toState.url);
+			$timeout(function(){
+				angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
+			},1000);
+		}
 	});
 
 })
@@ -96,23 +76,34 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 //--------------------------------------
 
 
-  .state('app.articles', {
-    url: '/articles',
+  .state('app.dashboard', {
+    url: '/dashboard',
     views: {
       'menuContent': {
         templateUrl: 'templates/dashboard.html',
-		controller: 'ArticlesCtrl'
+		controller: 'DashCtrl'
       }
      },
 	 authStatus: true
   })
 
-  .state('app.article', {
-    url: '/article/:articleId',
+
+    .state('app.profiles', {
+      url: '/profiles',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/profiles.html',
+          controller: 'ProfilesCtrl'
+        }
+      }
+    })
+
+  .state('app.profile', {
+    url: '/profile/:profileId',
     views: {
       'menuContent': {
         templateUrl: 'templates/profile-detail.html',
-        controller: 'ArticleCtrl'
+        controller: 'ProfileCtrl'
       }
     }
   });
