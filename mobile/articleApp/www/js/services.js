@@ -1,51 +1,90 @@
-var BaseApiUrl = '192.168.0.103:8000';
+
 angular.module('starter.services', [])
 
-.factory('Articles', function($http, $rootScope, $ionicLoading) {
+  .factory('Articles', function($http, $rootScope, $ionicLoading, apiHelper) {
     var articles = [];
-  // Might use a resource here that returns a JSON array
+    // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
+    // Some fake testing data
 
-  return {
-    all: function($scope) {
-      $ionicLoading.show({
-        template: 'Loading...'
-      });
-      $http.get('http://192.168.0.103:8000/article/getArticles').
-        success(function(data, status, headers, config) {
-          $ionicLoading.hide();
-          if(data.code == 0) {
-            $scope.articles = data.article;
-          } else{
-            $rootScope.showAlert(data.message);
-
-          }
-        }).
-        error(function(data) {
-          $ionicLoading.hide();
-          $rootScope.showAlert(data.message);
+    return {
+      all: function($scope) {
+        $ionicLoading.show({
+          template: 'Loading...'
         });
-    },
-    get: function(articleId, $scope) {
-      $ionicLoading.show({
-        template: 'Loading...'
-      });
-      $http.get('http://192.168.0.103:8000/article/getArticle/'+articleId).
-        success(function(data) {
-          $ionicLoading.hide();
-          $scope.showHtml = true;
-          if(data.code == 0) {
-            $scope.article = data.article;
-          } else{
-            $rootScope.showAlert(data.message);
-          }
-        }).
-        error(function(data) {
-          $scope.showHtml = true;
-          $ionicLoading.hide();
-          $rootScope.showAlert(data.message);
+        apiHelper.get($rootScope.BaseApiUrl + '/article/getArticles', function(data) {
+          $scope.articles = data.article;
         });
-    }
-  };
-});
+      },
+      get: function(articleId, $scope) {
+        $ionicLoading.show({
+          template: 'Loading...'
+        });
+        apiHelper.get($rootScope.BaseApiUrl + '/article/getArticle/'+articleId, function(data) {
+          $scope.showHtml = true;
+          $scope.article = data.article;
+        });
+      }
+    };
+  })
+
+  .factory('apiHelper', function($http, $ionicLoading) {
+    var articles = [];
+    // Might use a resource here that returns a JSON array
+
+    // Some fake testing data
+
+    return {
+      get: function(url, succCb, errCb) {
+        $http.get(url).
+          success(function(data, status, headers, config) {
+            $ionicLoading.hide();
+            if(data.code == 0) {
+              if(succCb && typeof succCb == 'function') succCb(data);
+            } else{
+              $rootScope.showAlert(data.message);
+            }
+          }).
+          error(function(data) {
+            $ionicLoading.hide();
+            $rootScope.showAlert(data.message);
+          });
+      },
+      post: function(url, params, succCb, errCb) {
+        $http.post(url, params).
+          success(function(data, status, headers, config) {
+            if(data.code == 0) {
+              if(succCb && typeof succCb == 'function') succCb(data);
+            } else{
+              $rootScope.showAlert(data.message);
+            }
+          }).
+          error(function(data) {
+            $rootScope.showAlert(data.message);
+          });
+      }
+    };
+  })
+  .factory('localStorage', function() {
+    var articles = [];
+    // Might use a resource here that returns a JSON array
+
+    // Some fake testing data
+
+    return {
+      get: function (key) {
+        var res = window.localStorage.getItem(key);
+        if (res) {
+          return JSON.parse(res);
+        } else {
+          return false;
+        }
+      },
+      set: function (key, value) {
+        window.localStorage.setItem(key, JSON.stringify(value));
+      },
+      delete: function (key) {
+        window.localStorage.removeItem(key);
+      }
+    };
+  })
