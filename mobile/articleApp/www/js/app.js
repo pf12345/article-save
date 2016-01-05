@@ -7,7 +7,7 @@
 angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 
 .run(function($ionicPlatform , $rootScope, $timeout, $http, $location, $ionicPopup, apiHelper, localStorage) {
-        $rootScope.BaseApiUrl = 'http://192.168.0.103:8000';
+        $rootScope.BaseApiUrl = 'http://10.0.0.64:8000';
     $rootScope.showAlert = function(msg) {
       var alertPopup = $ionicPopup.alert({
         title: '提示',
