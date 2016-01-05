@@ -6,10 +6,11 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 
-.run(function($ionicPlatform , $rootScope, $timeout, $http, $location) {
+.run(function($ionicPlatform , $rootScope, $timeout, $http, $location, $ionicPopup, apiHelper, localStorage) {
+        $rootScope.BaseApiUrl = 'http://192.168.0.103:8000';
     $rootScope.showAlert = function(msg) {
       var alertPopup = $ionicPopup.alert({
-        title: 'Warning Message',
+        title: '提示',
         template: msg
       });
     };
@@ -33,33 +34,20 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 	  $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
       console.log(toState)
 		  $rootScope.authStatus = toState.authStatus;
-      if(toState.name == 'app.login') {
-        $http.get('http://192.168.0.103:8000/user/isLogin').
-          success(function(data, status, headers, config) {
-            console.log(data);
-            if(data.code == 0) {
-              $location.path('/app/articles');
-              $timeout(function(){
-                angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
-              },1000);
-            } else{
-              $location.path('/app/login');
-            }
-          }).
-          error(function(data) {
-            //$scope.showAlert(data.message);
-          });
+      if(toState.name == 'app.init') {
+        if(localStorage.get('isLogin')) {
+          $location.path('/app/articles');
+          $timeout(function(){
+            angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
+          },1000);
+        }else {
+          $location.path('/app/login');
+        }
       }else if(toState.name != 'app.article'){
         $timeout(function(){
           angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
         },1000);
-
       }
-
-		  if($rootScope.authStatus){
-
-
-		  }
     });
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
@@ -111,7 +99,17 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
      },
 	 authStatus: true
   })
-
+  .state('app.init', {
+      url: '/init'
+    })
+    .state('app.set', {
+      url: '/set',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/settings.html'
+        }
+      }
+    })
   .state('app.article', {
     url: '/article/:articleId',
     views: {
@@ -122,5 +120,5 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/login');
+  $urlRouterProvider.otherwise('/app/init');
 });

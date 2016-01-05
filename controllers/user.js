@@ -131,7 +131,7 @@
           });
         }
       });
-    })
+    });
 
     /**
      * 退出登录
@@ -140,6 +140,17 @@
       req.session.clear(function (err){
         if (!err) {
           res.redirect("/");
+        }
+      });
+    });
+
+    app.get('/mobile/user/signOut', function(req, res, next) {
+      req.session.clear(function (err){
+        if (!err) {
+          res.send({
+            code: 0,
+            message: '退出成功'
+          });
         }
       });
     })

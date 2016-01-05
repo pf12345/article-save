@@ -1,6 +1,6 @@
 var app = angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout,  $location, $ionicPopup, $http) {
+.controller('AppCtrl', function($scope, $timeout,  $location, $rootScope, apiHelper, localStorage) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -17,39 +17,52 @@ var app = angular.module('starter.controllers', [])
    $scope.login = function(user) {
 
 		if(typeof(user)=='undefined'){
-			$scope.showAlert('Please fill username and password to proceed.');
+      $rootScope.showAlert('请输入用户名和密码！');
 			return false;
 		}
 
 		if(user.username && user.password){
-      $http.post('http://192.168.0.103:8000/user/login', {name: user.username, password: user.password}).
-        success(function(data, status, headers, config) {
-         if(data.code == 0) {
-           $location.path('/app/articles');
-         } else{
-           $scope.showAlert(data.message);
-         }
-        }).
-        error(function(data) {
-          $scope.showAlert(data.message);
-        });
+      apiHelper.post($rootScope.BaseApiUrl + '/user/login', {name: user.username, password: user.password}, function(data) {
+        localStorage.set('isLogin', true);
+        $location.path('/app/articles');
+      });
 			//$location.path('/app/dashboard');
 		}else{
-			$scope.showAlert('Invalid username or password.');
+      $rootScope.showAlert('Invalid username or password.');
 		}
 
 	};
+    $scope.register = function(user) {
+
+      if(typeof(user)=='undefined'){
+        $rootScope.showAlert('请输入用户名和密码！');
+        return false;
+      }
+      if(user.r_password != user.r_repassword) {
+        $rootScope.showAlert('辆次输入密码不一致！！');
+        return false;
+      }
+      if(user.r_username && user.r_password){
+        apiHelper.post($rootScope.BaseApiUrl + '/user/register', {name: user.r_username, password: user.r_password}, function(data) {
+          console.log(data);
+          localStorage.set('isLogin', true);
+          $location.path('/app/articles');
+        });
+        //$location.path('/app/dashboard');
+      }else{
+        $rootScope.showAlert('Invalid username or password.');
+      }
+
+    };
   //--------------------------------------------
-  $scope.logout = function() {   $location.path('/app/login');   };
+  $scope.logout = function() {
+    apiHelper.get($rootScope.BaseApiUrl+'/mobile/user/signOut', function() {
+      localStorage.delete('isLogin');
+      $location.path('/app/login');
+    });
+  };
   //--------------------------------------------
-   // An alert dialog
-	 $scope.showAlert = function(msg) {
-	   var alertPopup = $ionicPopup.alert({
-		 title: 'Warning Message',
-		 template: msg
-	   });
-	 };
-  //--------------------------------------------
+
 })
 
 .controller('ArticlesCtrl', function($scope , Articles, $timeout) {

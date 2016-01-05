@@ -11,22 +11,21 @@
   <div class="row responsive-sm padding remvoeBP">
 	  <div class="col">
 		   <div class="app-logo"><img src="img/logo.png"></div>
-			
+
 			<div class="list list-inset removePM">
-			  <label class="item item-input"><input type="text" placeholder="Full Name"> </label>
-			  <label class="item item-input"><input type="text" placeholder="Email Address"> </label>
-			  <label class="item item-input"><input type="text" placeholder="Phone Number"> </label>
-			  <label class="item item-input"><input type="password" placeholder="Password"> </label>
+			  <label class="item item-input"><input type="text" ng-model="user.r_username" placeholder="用户名"> </label>
+			  <label class="item item-input"><input type="password" ng-model="user.r_password" placeholder="密码"> </label>
+        <label class="item item-input"><input type="password" ng-model="user.r_repassword" placeholder="再次输入"> </label>
 			</div>
 
-			<div class="loginButton"><button class="button ion-person button-block button-balanced"> Register </button>  </div>
+			<div class="loginButton"><button class="button ion-person button-block button-balanced" ng-click="register(user);" > 注册 </button>  </div>
 	  </div>
   </div>
 
-	<div class="row  padding removePM">
-	  <div class="col"> <a class=" button-positive button button-block" ng-click="facebookSignIn()"><i class="icon ion-social-facebook"></i></a> </div>
-	  <div class="col"> <a class="button-calm button button-block" ng-click="twitterSignIn()"><i class="icon ion-social-twitter"></i></a> </div>
-	</div>
+	<!--<div class="row  padding removePM">-->
+	  <!--<div class="col"> <a class=" button-positive button button-block" ng-click="facebookSignIn()"><i class="icon ion-social-facebook"></i></a> </div>-->
+	  <!--<div class="col"> <a class="button-calm button button-block" ng-click="twitterSignIn()"><i class="icon ion-social-twitter"></i></a> </div>-->
+	<!--</div>-->
 
   </ion-content>
 </ion-view>
