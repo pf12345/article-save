@@ -20,6 +20,6 @@ exports.logPath = {
  */
 exports.dbInfo = {
     cookieSecret:'pengfeng',
-    db: 'carSchool',
+    db: 'articledb',
     host: 'localhost'
 };
