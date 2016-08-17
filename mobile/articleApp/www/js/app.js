@@ -33,21 +33,21 @@ angular.module('starter', ['ionic', 'starter.controllers' , 'starter.services'])
 	 //stateChange event
 	  $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
       console.log(toState)
-		  $rootScope.authStatus = toState.authStatus;
+      console.log(35)
       if(toState.name == 'app.init') {
         if(localStorage.get('isLogin')) {
           $location.path('/app/articles');
-          $timeout(function(){
-            angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
-          },1000);
         }else {
           $location.path('/app/login');
         }
-      }else if(toState.name != 'app.article'){
+      }
+      if(toState.name != 'app.login' && toState.name != 'app.article') {
         $timeout(function(){
+          alert(angular.element(document.querySelector('#leftMenu' )))
           angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
         },1000);
       }
+      $rootScope.authStatus = toState.authStatus;
     });
 
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {

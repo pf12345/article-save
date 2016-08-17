@@ -8,12 +8,17 @@ angular.module('starter.services', [])
     // Some fake testing data
 
     return {
-      all: function($scope) {
-        $ionicLoading.show({
-          template: 'Loading...'
-        });
+      all: function($scope, cb, noloading) {
+        if(!noloading) {
+          $ionicLoading.show({
+            template: 'Loading...'
+          });
+        }
         apiHelper.get($rootScope.BaseApiUrl + '/article/getArticles', function(data) {
           $scope.articles = data.article;
+          if(cb && typeof cb == 'function') {
+            cb();
+          }
         });
       },
       get: function(articleId, $scope) {

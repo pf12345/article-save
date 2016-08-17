@@ -45,6 +45,7 @@ var app = angular.module('starter.controllers', [])
       if(user.r_username && user.r_password){
         apiHelper.post($rootScope.BaseApiUrl + '/user/register', {name: user.r_username, password: user.r_password}, function(data) {
           console.log(data);
+          $scope.user = {};
           localStorage.set('isLogin', true);
           $location.path('/app/articles');
         });
@@ -66,10 +67,14 @@ var app = angular.module('starter.controllers', [])
 })
 
 .controller('ArticlesCtrl', function($scope , Articles, $timeout) {
-    $timeout(function(){
-      angular.element(document.querySelector('#leftMenu' )).removeClass("hide");
-    },1000);
     Articles.all($scope);
+    $scope.update = function() {
+      Articles.all($scope, function() {
+        $timeout( function() {
+          $scope.$broadcast('scroll.refreshComplete');
+        }, 1000);
+      }, true);
+    }
   })
 
 .controller('ArticleCtrl', function($scope, $stateParams , Articles, $rootScope) {

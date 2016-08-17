@@ -1,0 +1,45 @@
+div, p, h1, h2, h3, h4, h5, h6, textarea {
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    display: inline;
+}
+
+input {
+    outline: none;
+}
+
+#requiredTips {
+    position: fixed;
+    top: 50%;
+    margin-top: -25px;
+    text-align: center;
+    width: 100%;
+    z-index: 1011;
+}
+
+#requiredTips span {
+    min-width: 260px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #dc4437;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 300ms;
+    -moz-transition: opacity 300ms;
+    -webkit-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+}
+
+#requiredTips.show span {
+    opacity: 1;
+}
+

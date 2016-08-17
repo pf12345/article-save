@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <title>ARTICLE</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+            background: #f2f2f2;
+            width: 185px;
+            line-height: 2em;
+            color: #404040;
+            font-family: "微软雅黑";
+        }
+
+        div:first-child {
+            margin-top: 0px;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #404040;
+        }
+
+        div:hover a, div:hover {
+            color: #fd6c0d;
+        }
+
+        div {
+            cursor: pointer;
+            text-align: left;
+            padding: 1px 3px;
+            font-size: 0.8em;
+            width: 160px;
+            height: 30px;
+            line-height: 30px;
+            border: none;
+            padding-left: 20px;
+            background: #f9f9f9;
+            position: relative;
+        }
+
+        div:hover {
+            background: #f2f2f2;
+        }
+
+        b {
+            display: inline-block;
+            height: 17px;
+            width: 22px;
+            background: url("/image/icons/icons.png") no-repeat;
+            margin-right: 9px;
+            position: relative;
+            top: 4px;
+        }
+
+        #read_clear:hover #read_clear_b {
+            background-position: -61px -12px;
+        }
+
+        #read_later_b {
+            background-position: -16px -41px;
+        }
+
+        #read_later:hover #read_later_b {
+            background-position: -61px -41px;
+        }
+
+
+        #read_novel:hover #read_novel_b {
+            background-position: -61px -77px;
+        }
+
+        #read_mymagazine:hover #read_mymagazine_b {
+            background-position: -61px -111px;
+        }
+
+        #read_subscript:hover #read_subscript_b {
+            background-position: -61px -142px;
+        }
+
+        #Recent_Favorites:hover #Recent_Favorites_b {
+            background-position: -60px -171px;
+        }
+    </style>
+    <script src="/js/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<p style="height: 10px;background: #fd6c0d"></p>
+<p class="read_line"></p>
+<div id="read_later"><b id="read_later_b"></b>文章收藏</div>
+<p class="read_line"></p>
+<a target="_blank" href="http://www.baidu.com">
+    <div id="read_about" class="no_icon">ARTICLE官网</div>
+</a>
+<script src="/js/popup.js"></script>
+</body>
+</html>

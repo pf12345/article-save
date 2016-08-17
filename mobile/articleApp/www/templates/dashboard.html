@@ -1,9 +1,14 @@
 <ion-view view-title="首页" hide-back-button="true">
   <ion-content>
-    <ion-item ng-repeat="articlelist in articles" class="item" href="#/app/article/{{articlelist._id}}">
-      <!--<img ng-src="http://www.baidu.com/favicon.ico" style="border-radius: 0;">-->
-      <h2>{{articlelist.title}}</h2>
-      <p ng-bind-html="articlelist.content ? articlelist.content.substring(0,150) : ''"></p>
-    </ion-item>
+    <ion-refresher on-refresh="update()" pulling-text="下拉刷新" spinner="ios">
+
+    </ion-refresher>
+    <ion-list>
+      <ion-item ng-repeat="articlelist in articles" class="item" href="#/app/article/{{articlelist._id}}">
+        <!--<img ng-src="http://www.baidu.com/favicon.ico" style="border-radius: 0;">-->
+        <h2>{{articlelist.title}}</h2>
+        <p ng-bind-html="articlelist.content ? articlelist.content.substring(0,150) : ''"></p>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

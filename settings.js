@@ -4,6 +4,6 @@
 
 module.exports = {
     cookieSecret:'pengfeng',
-    db: 'article',
+    db: 'carSchool',
     host: 'localhost'
 };
