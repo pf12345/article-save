@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96ab8655-19a3-435b-8ca7-ce098db27684" name="Default" comment="mobile develop">
+    <list default="true" id="96ab8655-19a3-435b-8ca7-ce098db27684" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/1.0.9_0.rar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/init.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="article-save.iws" />
@@ -22,41 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="popup.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/articleChrome_new/js/popup.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/home/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1587">
-              <caret line="69" column="27" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="28" />
+            <state relative-caret-position="414">
+              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/articleChrome_new/js/common.js">
+      <file leaf-file-name="newWebpack.config.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/newWebpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/articleChrome_new/manifest.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="13" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="clear_read.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/articleChrome_new/js/clear_read.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69322">
-              <caret line="3067" column="2" selection-start-line="3067" selection-start-column="2" selection-end-line="3067" selection-end-column="2" />
+            <state relative-caret-position="296">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,6 +109,7 @@
         <option value="$PROJECT_DIR$/articleChrome_new/css/article_cj_comand.css" />
         <option value="$PROJECT_DIR$/articleChrome_new/js/common.js" />
         <option value="$PROJECT_DIR$/articleChrome_new/js/popup.js" />
+        <option value="$PROJECT_DIR$/newWebpack.config.js" />
       </list>
     </option>
   </component>
@@ -179,16 +162,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="article-save" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="article-save" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="article-save" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -304,7 +277,7 @@
       <option name="presentableId" value="Default" />
       <updated>1451354042895</updated>
       <workItem from="1470466971939" duration="3242000" />
-      <workItem from="1471440406231" duration="4302000" />
+      <workItem from="1471440406231" duration="4465000" />
     </task>
     <task id="LOCAL-00001" summary="clear chrome plugin">
       <created>1451359096282</created>
@@ -376,11 +349,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471444704825</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update">
+      <created>1471444867368</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1471444867368</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7544000" />
+    <option name="totallyTimeSpent" value="7707000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -456,7 +436,8 @@
     <MESSAGE value="move chrome plugins and add mobile" />
     <MESSAGE value="mobile develop" />
     <MESSAGE value="chrome article new" />
-    <option name="LAST_COMMIT_MESSAGE" value="chrome article new" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -465,41 +446,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/components/reigster.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/components/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/constants/TodoConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/articleChrome/css/all.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4" column="170941" selection-start-line="4" selection-start-column="170941" selection-end-line="4" selection-end-column="170941" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/articleChrome/css/article_cj_comand.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -553,13 +499,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/home/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -794,26 +733,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/articleChrome_new/js/clear_read.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69322">
-          <caret line="3067" column="2" selection-start-line="3067" selection-start-column="2" selection-end-line="3067" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/articleChrome_new/js/background.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/articleChrome_new/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -826,6 +749,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/articleChrome_new/js/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/articleChrome_new/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -834,10 +765,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/articleChrome_new/js/popup.js">
+    <entry file="file://$PROJECT_DIR$/articleChrome_new/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1587">
-          <caret line="69" column="27" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="28" />
+        <state relative-caret-position="23">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/articleChrome_new/js/clear_read.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69322">
+          <caret line="3067" column="2" selection-start-line="3067" selection-start-column="2" selection-end-line="3067" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/bbs.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/add-qa.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/bg-adbox.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/bg-footer.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newWebpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
