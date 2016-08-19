@@ -6,7 +6,7 @@ body {
     padding: 5px 10px;
     font-family: 'Whitney SSm A', 'Whitney SSm B', 'helvetica neue', helvetica, sans-serif;
     color: #302c22;
-    font-size: 150%;
+    font-size: 14px;
     line-height: 1.6;
     background: url(../images/bg_img.jpg) center top no-repeat fixed #fff;
 }
@@ -131,7 +131,7 @@ pre {
         font-family: 'Whitney SSm A', 'Whitney SSm B', 'helvetica neue', helvetica, sans-serif;
         background: url(../images/f93a9060-255c-4b44-aebd-84b641b56039.jpg) center top no-repeat fixed #fff;
         color: #302c22;
-        font-size: 200%;
+        font-size: 14px;
         line-height: 1.6;
         word-wrap: break-word;
     }
@@ -148,7 +148,7 @@ pre {
 }
 
 /*login*/
-#loginBox form, #loginCover, #registerBox form, #registerCover {
+#loginBox, #registerBox {
     width: 400px;
     height: 300px;
     position: absolute;
@@ -156,6 +156,24 @@ pre {
     margin-top: -200px;
     left: 50%;
     margin-left: -200px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+#loginBox.show, #registerBox.show {
+    opacity: 1;
+}
+#loginBox.remove, #registerBox.remove {
+    margin-left: -220px;
+    opacity: 0;
+}
+#loginBox form, #loginCover, #registerBox form, #registerCover {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
     border-radius: 5px;
 }
 
