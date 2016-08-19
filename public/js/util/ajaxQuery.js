@@ -1,34 +1,36 @@
 /**
  * Created by Christ on 2015/12/18.
  */
-var $ = require('jquery');
-var ajaxQuery = {
-    get: function(url, cb) {
-        $.ajax({
-            type: "GET",
-            url: url,
-            success: function(msg){
-                console.log(msg);
-                if(cb && typeof cb == 'function') {
-                    cb(msg);
-                }
+import $ from 'jquery';
+
+const get = (url, cb)=> {
+    $.ajax({
+        type: "GET",
+        url: url,
+        success(msg){
+            if (cb && typeof cb == 'function') {
+                cb(msg);
             }
-        });
-    },
-    post: function(url, params, cb) {
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: params,
-            success: function(msg){
-                console.log(msg);
-                if(cb && typeof cb == 'function') {
-                    cb(msg);
-                }
-            }
-        });
-    }
+        }
+    });
 };
 
-exports.post = ajaxQuery.post;
-exports.get = ajaxQuery.get;
+const post = (url, params, cb) => {
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: params,
+        success(msg){
+            if (cb && typeof cb == 'function') {
+                cb(msg);
+            }
+        }
+    });
+};
+
+const ajaxQuery = {
+    get,
+    post
+};
+
+export default ajaxQuery;

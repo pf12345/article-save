@@ -100,9 +100,10 @@ pre {
 .summaryBox {
     color: #555;
     font-size: 1.2em;
-    text-indent:2em;
+    text-indent: 2em;
 }
-.summaryBox2{
+
+.summaryBox2 {
     color: #555;
     font-size: 1.2em;
     margin-top: 20px;
@@ -112,10 +113,12 @@ pre {
     margin-top: 20px;
     color: #999;
 }
+
 .memoBox a {
     color: #999;
     float: right;
 }
+
 .siteIco {
     height: 1em;
     margin: 0 5px;
@@ -144,7 +147,6 @@ pre {
     }
 }
 
-
 /*login*/
 #loginBox form, #loginCover, #registerBox form, #registerCover {
     width: 400px;
@@ -156,45 +158,64 @@ pre {
     margin-left: -200px;
     border-radius: 5px;
 }
+
 #registerBox form, #registerCover {
     height: 360px;
 }
+
 #loginCover, #registerCover {
     opacity: 0.7;
     background: #fff;
 }
+
 .lrBox form input {
     margin: 10px 20px;
     width: 360px;
     padding: 5px 10px;
     outline: none;
 }
+
 .lrBox form input[type=text] {
     box-shadow: none;
 }
+
 .lrBox form input[type=button] {
     margin-top: 30px;
-    background: #a4cd66;
+    background: #41464b;
     border: none;
+    color: #fff;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    transition: 0.2s;
 }
+
+.lrBox form input[type=button]:hover {
+    background-color: #313438;
+}
+
 .lrBox form p {
     margin: 0;
     padding: 0;
 }
+
 .lrBox form {
     padding-top: 30px;
 }
+
 .lrWaring {
     font-size: 12px;
     color: red;
     margin: 0 20px;
 }
+
 .lrHide {
     visibility: hidden;
 }
+
 .lrShow {
     visibility: visible;
 }
+
 .lrGoLoginOrRe {
     font-size: 12px;
     color: #9299ab !important;

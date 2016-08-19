@@ -2,7 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    devtool: 'cheap-module-eval-source-map',
     entry: [
         'webpack-hot-middleware/client?reload=true',
         './public/js/main.js'
@@ -15,7 +14,8 @@ module.exports = {
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        new webpack.optimize.UglifyJsPlugin({minimize: true})
     ],
     module: {
         loaders: [{
@@ -24,7 +24,8 @@ module.exports = {
             exclude: /node_modules/,
             include: __dirname
         }]
-    }
+    },
+    watch: true
 };
 
 

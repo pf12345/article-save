@@ -21,5 +21,5 @@ exports.logPath = {
 exports.dbInfo = {
     cookieSecret:'pengfeng',
     db: 'articledb',
-    host: 'localhost'
+    host: '127.0.0.1'
 };

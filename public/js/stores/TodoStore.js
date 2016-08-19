@@ -9,69 +9,69 @@
  * TodoStore
  */
 
-var AppDispatcher = require('../dispatcher/AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
-var TodoConstants = require('../constants/TodoConstants');
-var assign = require('object-assign');
+import AppDispatcher from '../dispatcher/AppDispatcher';
+import {EventEmitter} from 'events';
+import TodoConstants from '../constants/TodoConstants';
+import assign from 'object-assign';
 
-var CHANGE_EVENT = 'change';
+let CHANGE_EVENT = 'change';
 
-var _todos = [];
+let _todos = [];
 
 
 /**
  * Delete a TODO item.
  * @param  {string} id
  */
-function destroy(id) {
-  for(var i = 0, _i = _todos.length; i < _i; i++) {
-    if(_todos[i]._id == id){
-     _todos.splice(i, 1);
+const destroy = (id) => {
+    for (var i = 0, _i = _todos.length; i < _i; i++) {
+        if (_todos[i]._id == id) {
+            _todos.splice(i, 1);
+        }
     }
-  }
-}
+};
 
 
 var TodoStore = assign({}, EventEmitter.prototype, {
 
-  /**
-   * Get the entire collection of TODOs.
-   * @return {object}
-   */
-  getAll: function(arr) {
-    if(arr) _todos = arr;
-    return _todos;
-  },
+    /**
+     * Get the entire collection of TODOs.
+     * @return {object}
+     */
+    getAll(arr){
+        if (arr) _todos = arr;
+        return _todos;
+    },
 
-  emitChange: function() {
-    this.emit(CHANGE_EVENT);
-  },
+    emitChange() {
+        this.emit(CHANGE_EVENT);
+    },
 
-  /**
-   * @param {function} callback
-   */
-  addChangeListener: function(callback) {
-    this.on(CHANGE_EVENT, callback);
-  },
+    /**
+     * @param {function} callback
+     */
+    addChangeListener(callback) {
+        this.on(CHANGE_EVENT, callback);
+    },
 
-  /**
-   * @param {function} callback
-   */
-  removeChangeListener: function(callback) {
-    this.removeListener(CHANGE_EVENT, callback);
-  }
+    /**
+     * @param {function} callback
+     */
+    removeChangeListener(callback) {
+        this.removeListener(CHANGE_EVENT, callback);
+    }
 });
 
 // Register callback to handle all updates
-AppDispatcher.register(function(action) {
-  switch(action.actionType) {
-    case TodoConstants.TODO_DESTROY:
-      destroy(action.id);
-      TodoStore.emitChange();
-      break;
-    default:
-      // no op
-  }
+AppDispatcher.register(function (action) {
+    switch (action.actionType) {
+        case TodoConstants.TODO_DESTROY:
+            destroy(action.id);
+            TodoStore.emitChange();
+            break;
+        default:
+        // no op
+    }
 });
 
 module.exports = TodoStore;
