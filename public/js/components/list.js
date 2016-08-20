@@ -26,7 +26,7 @@ class ListItem extends Component {
                     </div>
                     <div className="summaryBox">{content}</div>
                     <div className="memoBox">{this.props.article.user ? this.props.article.user.name : ' '}
-                        采集于 {this.props.article.link}
+                        收藏于 {this.props.article.link}
                         <a href="javascript:;" onClick={this._deleteItem}>删除</a></div>
                 </div>
             </li>
