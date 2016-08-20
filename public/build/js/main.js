@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fb9e57c42c874f087ea5"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fbc0786780711cd40085"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -24877,15 +24877,9 @@
 
 	var _actionsListActions2 = _interopRequireDefault(_actionsListActions);
 
-	_utilAjaxQuery2['default'].get('/user/isLogin', function (msg) {
-	    if (msg.code == 1) {
-	        _reactRouter.hashHistory.push('/login');
-	    } else {
-	        _utilAjaxQuery2['default'].get('/article/getArticles', function (msg) {
-	            _actionsListActions2['default'].createList(msg.article);
-	            _reactRouter.hashHistory.push('/list');
-	        });
-	    }
+	_utilAjaxQuery2['default'].get('/article/getArticles', function (msg) {
+	    _actionsListActions2['default'].createList(msg.article);
+	    _reactRouter.hashHistory.push('/list');
 	});
 
 	_reactDom2['default'].render(_react2['default'].createElement(

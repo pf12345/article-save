@@ -8,16 +8,9 @@ import List from './components/list';
 import ajaxQuery from './util/ajaxQuery';
 import ListActions from './actions/ListActions';
 
-
-ajaxQuery.get('/user/isLogin', function (msg) {
-    if (msg.code == 1) {
-        hashHistory.push('/login');
-    } else {
-        ajaxQuery.get('/article/getArticles', function (msg) {
-            ListActions.createList(msg.article)
-            hashHistory.push('/list');
-        })
-    }
+ajaxQuery.get('/article/getArticles', function (msg) {
+    ListActions.createList(msg.article)
+    hashHistory.push('/list');
 });
 
 ReactDOM.render(

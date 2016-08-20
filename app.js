@@ -49,6 +49,8 @@ var postWhiteList = ['/user/login', '/user/register'];
 
 //用户是否登录验证
 var auth = function (req, res, next) {
+
+    //req.xhr判断是否是ajax请求
     if (!req.xhr || postWhiteList.indexOf(req.url) != -1 || req.session.get('userId')) {
         return next();
     } else {
