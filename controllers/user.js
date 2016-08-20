@@ -8,12 +8,6 @@
          @param email
          @param password
          */
-        app.get('/user/register', function (req, res, next) {
-            res.send({
-                code: 1,
-                message: 'register is not found'
-            })
-        });
         app.post('/user/register', function (req, res, next) {
             var user;
             user = {
@@ -46,12 +40,7 @@
          @param email
          @param password
          */
-        app.get('/user/login', function (req, res, next) {
-            res.send({
-                code: 1,
-                message: 'login is not found'
-            })
-        });
+
 
         app.post('/user/login', function (req, res, next) {
             var user;
@@ -72,8 +61,6 @@
                     });
                 } else {
                     setSession(req, result);
-                    console.log('user 75 ');
-                    console.log(req.session)
                     return res.send({
                         code: 0,
                         message: 'ok',
@@ -92,8 +79,6 @@
          * @param res
          */
         app.get('/user/isLogin', function (req, res, next) {
-            console.log('user 94 ');
-            console.log(req.session)
             if (req.session.get('userId')) {
                 res.send({
                     code: 0,
@@ -166,8 +151,6 @@
         req.session.set('userName', result.name);
         req.session.set('userEmail', result.email);
         req.session.set('userAvatar', result.avatar);
-        console.log('user 157')
-        console.log(req.session);
     };
 
 }).call(this);

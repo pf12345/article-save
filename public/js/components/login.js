@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import {hashHistory} from 'react-router';
+import {Router, Route, hashHistory} from 'react-router';
 import ajaxQuery from '../util/ajaxQuery';
-import {List} from './list';
-import TodoStore from '../stores/TodoStore';
+import ListActions from '../actions/ListActions';
 
 class LoginBox extends Component {
     constructor(props) {
@@ -25,26 +23,28 @@ class LoginBox extends Component {
 
     componentDidMount() {
         let _this = this;
-        setTimeout(()=>{
+        setTimeout(()=> {
             _this.setState({show: true});
-        },50);
+        }, 50);
     }
 
     render() {
         let waringClass = this.state.waringClass + ' lrWaring';
         let boxClass = 'lrBox';
-        if(this.state.remove) {
+        if (this.state.remove) {
             boxClass = 'lrBox remove';
-        }else if(this.state.show) {
+        } else if (this.state.show) {
             boxClass = 'lrBox show';
         }
         return (
             <div id="loginBox" className={boxClass}>
                 <div id="loginCover"></div>
                 <form>
-                    <p><input type="text" onKeyDown={this._inputKeyDown} onChange={this._handleChange().name} placeholder="账号" value={this.state.name}/>
+                    <p><input type="text" onKeyDown={this._inputKeyDown} onChange={this._handleChange().name}
+                              placeholder="账号" value={this.state.name}/>
                     </p>
-                    <p><input type="password" onKeyDown={this._inputKeyDown} onChange={this._handleChange().password} placeholder="密码"
+                    <p><input type="password" onKeyDown={this._inputKeyDown} onChange={this._handleChange().password}
+                              placeholder="密码"
                               value={this.state.password}/></p>
                     <p><span className={waringClass}>{this.state.waringText}</span></p>
                     <p><input onClick={this._login} type="button" value="登录"/></p>
@@ -54,8 +54,8 @@ class LoginBox extends Component {
         )
     }
 
-    inputKeyDown(event){
-        if(event.keyCode === 13){
+    inputKeyDown(event) {
+        if (event.keyCode === 13) {
             this._login();
         }
     }
@@ -86,11 +86,8 @@ class LoginBox extends Component {
             if (msg.code == 0) {
                 ajaxQuery.get('/article/getArticles', function (msg) {
                     _this.setState({waringClass: 'lrHide'});
-                    TodoStore.getAll(msg.article);
-                    ReactDOM.render(
-                        <List></List>
-                        , document.getElementById('mainWrap')
-                    );
+                    ListActions.createList(msg.article);
+                    hashHistory.push('/list');
                 })
             } else {
                 _this.setState({waringClass: 'lrShow', waringText: msg.message});

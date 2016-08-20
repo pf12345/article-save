@@ -2,11 +2,9 @@
  * Created by Christ on 2015/12/28.
  */
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import {hashHistory} from 'react-router';
+import {Router, Route, hashHistory} from 'react-router';
 import ajaxQuery from '../util/ajaxQuery';
-import {List} from  './list';
-import TodoStore from '../stores/TodoStore';
+import ListActions from '../actions/ListActions';
 
 
 class RegisterBox extends Component {
@@ -97,11 +95,8 @@ class RegisterBox extends Component {
             if (msg.code == 0) {
                 ajaxQuery.get('/article/getArticles', function (msg) {
                     _this.setState({waringClass: 'lrHide'});
-                    TodoStore.getAll(msg.article);
-                    ReactDOM.render(
-                        <List></List>
-                        , document.getElementById('mainWrap')
-                    );
+                    ListActions.createList(msg.article);
+                    hashHistory.push('/list');
                 })
             } else {
                 _this.setState({waringClass: 'lrShow', waringText: msg.message});

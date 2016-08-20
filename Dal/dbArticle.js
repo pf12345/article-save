@@ -85,7 +85,6 @@
      * @param cb
      */
     exports.deleteItem = function(Id, cb) {
-        console.log('delete---------', Id)
         dbHelper.connectDB("article", cb, function(collection) {
             collection.remove({
                 _id: ObjectId(Id)
