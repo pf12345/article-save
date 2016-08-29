@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fbc0786780711cd40085"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1cd4a938b8d8fd765e67"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -24372,7 +24372,7 @@
 	                        'div',
 	                        { className: 'memoBox' },
 	                        this.props.article.user ? this.props.article.user.name : ' ',
-	                        '采集于 ',
+	                        '收藏于 ',
 	                        this.props.article.link,
 	                        _react2['default'].createElement(
 	                            'a',

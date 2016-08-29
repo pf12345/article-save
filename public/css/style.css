@@ -241,3 +241,7 @@ pre {
     float: right;
     cursor: pointer;
 }
+
+.container {
+    padding: 0;
+}
